@@ -2,9 +2,13 @@
 # iNeuBytes Virtual Internship Program (VIIP)
 
 **Name:** GANDU YESHWANTH SURYA
+
 **Registration No.:** INBT017895
+
 **Course ID:** WBINB20726
+
 **Program:** Virtual iNeuBytes Internship Program
+
 **Mentor:** Mayank Kumar (IIT Dhanbad)
 
 ## Structure
