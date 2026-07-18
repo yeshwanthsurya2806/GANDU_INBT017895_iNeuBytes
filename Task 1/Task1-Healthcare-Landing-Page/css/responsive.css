@@ -1,0 +1,178 @@
+/* =====================================
+        TABLET DEVICES
+===================================== */
+
+@media (max-width: 992px){
+
+    .hero,
+    .about{
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+    .hero-content h1{
+
+        font-size:48px;
+
+    }
+
+    .services-container,
+    .doctor-container,
+    .testimonial-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .why-container,
+    .contact-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .stats{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .footer-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* =====================================
+        MOBILE DEVICES
+===================================== */
+
+@media (max-width:768px){
+
+    section{
+
+        padding:70px 5%;
+
+    }
+
+    .hero{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .hero-content h1{
+
+        font-size:38px;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .about{
+
+        flex-direction:column;
+
+    }
+
+    .services-container,
+    .doctor-container,
+    .testimonial-container,
+    .why-container,
+    .contact-container,
+    .stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .appointment-form{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .input-group:last-child,
+    .appointment-form .btn{
+
+        grid-column:auto;
+
+    }
+
+}
+
+/* =====================================
+        MOBILE NAVIGATION
+===================================== */
+
+.menu-toggle{
+
+    display:none;
+
+    font-size:32px;
+
+    cursor:pointer;
+
+    color:var(--primary);
+
+}
+
+@media(max-width:768px){
+
+    .menu-toggle{
+
+        display:block;
+
+    }
+
+    .nav-btn{
+
+        display:none;
+
+    }
+
+    .nav-links{
+
+        position:absolute;
+
+        top:90px;
+
+        left:-100%;
+
+        width:100%;
+
+        background:white;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:25px;
+
+        padding:40px 0;
+
+        transition:.4s;
+
+        box-shadow:0 10px 20px rgba(0,0,0,.1);
+
+    }
+
+    .nav-links.active{
+
+        left:0;
+
+    }
+
+}
+
