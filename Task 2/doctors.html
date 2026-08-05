@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- ==========================================
+                    META INFORMATION
+    =========================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Browse experienced doctors from PulseCare and book appointments online with ease."
+    >
+
+    <meta
+        name="keywords"
+        content="Doctors, Hospital, Healthcare, Appointment, PulseCare"
+    >
+
+    <meta
+        name="author"
+        content="G Yeshwanth Surya"
+    >
+
+    <title>Our Doctors | PulseCare</title>
+
+    <!-- ==========================================
+                    FAVICON
+    =========================================== -->
+
+    <link
+        rel="icon"
+        href="assets/favicon.png"
+        type="image/png"
+    >
+
+    <!-- ==========================================
+                    CSS FILES
+    =========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/pages.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+</head>
+
+<body>
+
+<!-- ==========================================
+                    HEADER
+=========================================== -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <h2>
+
+                Pulse<span>Care</span>
+
+            </h2>
+
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+
+                <a href="index.html">
+
+                    Home
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a
+                    href="doctors.html"
+                    class="active"
+                >
+
+                    Doctors
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="history.html">
+
+                    Appointment History
+
+                </a>
+
+            </li>
+
+        </ul>
+
+        <div class="nav-btn">
+
+            <a
+                href="history.html"
+                class="btn"
+            >
+
+                My Appointments
+
+            </a>
+
+        </div>
+
+        <div class="menu-toggle">
+
+            ☰
+
+        </div>
+
+    </nav>
+
+</header>
+
+<!-- ==========================================
+                PAGE HEADER
+=========================================== -->
+
+<section class="page-header">
+
+    <div class="container">
+
+        <h1>
+
+            Meet Our Specialists
+
+        </h1>
+
+        <p>
+
+            Browse experienced healthcare professionals,
+            compare specialties, and book your appointment
+            with confidence.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+            DOCTOR LIST SECTION
+=========================================== -->
+
+<section class="doctor-list-page">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h5>
+
+                OUR SPECIALISTS
+
+            </h5>
+
+            <h2>
+
+                Find the Right Doctor
+
+            </h2>
+
+            <p>
+
+                Search doctors by name or filter by department
+                to find the healthcare professional that best
+                suits your medical needs.
+
+            </p>
+
+        </div>
+
+        <!-- ==========================
+                SEARCH & FILTER
+        =========================== -->
+
+        <div class="doctor-controls">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search doctor by name..."
+                aria-label="Search doctors by name"
+                autocomplete="off"
+            >
+
+            <div class="filter-buttons">
+
+                <button
+                    class="filter-btn active"
+                    data-department="All"
+                >
+                    All
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-department="Cardiology"
+                >
+                    Cardiology
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-department="Neurology"
+                >
+                    Neurology
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-department="Dental"
+                >
+                    Dental
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-department="Orthopedics"
+                >
+                    Orthopedics
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-department="Pediatrics"
+                >
+                    Pediatrics
+                </button>
+
+            </div>
+
+        </div>
+
+        <p class="doctor-count">
+
+            Showing all available specialists
+
+        </p>
+
+        <!-- ==========================
+                DOCTOR CARDS
+        =========================== -->
+
+        <div
+            id="doctorContainer"
+            class="doctor-grid"
+        >
+
+            <!-- Doctors are dynamically generated by doctors.js -->
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+                    FOOTER
+=========================================== -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <!-- About -->
+
+        <div class="footer-about">
+
+            <h2>
+
+                Pulse<span>Care</span>
+
+            </h2>
+
+            <p>
+
+                PulseCare is committed to delivering high-quality
+                healthcare through experienced specialists,
+                advanced medical technology, and compassionate
+                patient care.
+
+            </p>
+
+        </div>
+
+        <!-- Quick Links -->
+
+        <div class="footer-links">
+
+            <h3>
+
+                Quick Links
+
+            </h3>
+
+            <ul>
+
+                <li>
+
+                    <a href="index.html">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="doctors.html">
+
+                        Doctors
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="history.html">
+
+                        Appointment History
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- Departments -->
+
+        <div class="footer-services">
+
+            <h3>
+
+                Departments
+
+            </h3>
+
+            <ul>
+
+                <li>Cardiology</li>
+
+                <li>Neurology</li>
+
+                <li>Dental Care</li>
+
+                <li>Orthopedics</li>
+
+                <li>Pediatrics</li>
+
+            </ul>
+
+        </div>
+
+        <!-- Contact -->
+
+        <div class="footer-contact">
+
+            <h3>
+
+                Contact Us
+
+            </h3>
+
+            <p>
+
+                📞 +91 9876543210
+
+            </p>
+
+            <p>
+
+                📧 info@pulsecare.com
+
+            </p>
+
+            <p>
+
+                📍 Vellore, Tamil Nadu, India
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+
+        © 2026 PulseCare Healthcare Management System. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+<!-- ==========================================
+            SCROLL TO TOP BUTTON
+=========================================== -->
+
+<button
+    class="scroll-top"
+    id="scrollTopBtn"
+    aria-label="Scroll to top"
+>
+
+    ↑
+
+</button>
+
+<!-- ==========================================
+                JAVASCRIPT FILES
+=========================================== -->
+
+<script
+    src="js/doctors-data.js"
+    defer
+></script>
+
+<script
+    src="js/doctors.js"
+    defer
+></script>
+
+<script>
+
+    // ==========================================
+    // Scroll to Top Button
+    // ==========================================
+
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 300) {
+
+            scrollTopBtn.style.display = "flex";
+
+        } else {
+
+            scrollTopBtn.style.display = "none";
+
+        }
+
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+            behavior: "smooth"
+
+        });
+
+    });
+
+</script>
+
+</body>
+
+</html>

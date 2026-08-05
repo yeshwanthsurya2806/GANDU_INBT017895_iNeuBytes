@@ -1,0 +1,944 @@
+/* ==========================================================
+                    DOCTOR DETAILS PAGE
+========================================================== */
+
+.doctor-profile-section {
+
+    padding: 80px 8%;
+
+    background: var(--light);
+
+}
+
+/* ==========================================================
+                    DOCTOR PROFILE CARD
+========================================================== */
+
+.doctor-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 40px;
+
+    margin-bottom: 30px;
+
+    padding: 35px;
+
+    background: var(--white);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+}
+
+/* ==========================================================
+                    LEFT SECTION
+========================================================== */
+
+.doctor-left {
+
+    flex: 1;
+
+    text-align: center;
+
+}
+
+.doctor-left img {
+
+    width: 260px;
+
+    height: 260px;
+
+    object-fit: cover;
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+}
+
+/* ==========================================================
+                    RIGHT SECTION
+========================================================== */
+
+.doctor-right {
+
+    flex: 2;
+
+}
+
+.department-badge {
+
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    padding: 8px 18px;
+
+    background: var(--primary);
+
+    color: var(--white);
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+.doctor-right h2 {
+
+    margin-bottom: 20px;
+
+    color: var(--dark);
+
+}
+
+/* ==========================================================
+                    DOCTOR META
+========================================================== */
+
+.doctor-meta {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+
+}
+
+.info-card {
+
+    padding: 30px;
+
+    background: var(--white);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+}
+
+.info-card h4 {
+
+    margin-bottom: 10px;
+
+    color: var(--primary);
+
+}
+
+.info-card p {
+
+    color: var(--gray);
+
+    line-height: 1.7;
+
+}
+
+/* ==========================================================
+                    AVAILABLE SLOTS
+========================================================== */
+
+.slots {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 20px;
+
+}
+
+.slots span {
+
+    padding: 12px 20px;
+
+    background: #EFF6FF;
+
+    color: var(--primary);
+
+    border-radius: 30px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        transform var(--transition);
+
+}
+
+.slots span:hover {
+
+    background: var(--primary);
+
+    color: var(--white);
+
+    transform: translateY(-3px);
+
+}
+/* ==========================================================
+                    BOOKING PAGE
+========================================================== */
+
+.booking-section {
+
+    min-height: 100vh;
+
+    padding: 80px 0;
+
+    background: var(--light);
+
+}
+
+/* ==========================================================
+                    PAGE HEADER
+========================================================== */
+
+.booking-section .section-title {
+
+    max-width: 700px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+
+}
+
+.section-tag {
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--primary);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+.booking-section .section-title h2 {
+
+    margin-bottom: 12px;
+
+    color: var(--dark);
+
+    font-size: 42px;
+
+}
+
+.booking-section .section-title p {
+
+    color: var(--gray);
+
+    line-height: 1.7;
+
+}
+
+/* ==========================================================
+                    BOOKING GRID
+========================================================== */
+
+.booking-grid {
+
+    display: grid;
+
+    grid-template-columns: 360px 1fr;
+
+    gap: 35px;
+
+    align-items: start;
+
+}
+
+/* ==========================================================
+                DOCTOR SUMMARY CARD
+========================================================== */
+
+.doctor-summary-card {
+
+    position: sticky;
+
+    top: 30px;
+
+    overflow: hidden;
+
+    background: var(--white);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-hover);
+
+}
+
+.booking-doctor-image {
+
+    width: 100%;
+
+    height: 300px;
+
+    overflow: hidden;
+
+}
+
+.booking-doctor-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+.booking-doctor-info {
+
+    padding: 28px;
+
+}
+
+.booking-doctor-info h2 {
+
+    margin-bottom: 10px;
+
+    color: var(--dark);
+
+    font-size: 25px;
+
+}
+
+.doctor-qualification {
+
+    margin-bottom: 22px;
+
+    color: var(--gray);
+
+}
+
+.doctor-booking-details {
+
+    padding: 18px 0;
+
+    border-top: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+.doctor-booking-details p {
+
+    margin: 12px 0;
+
+    color: var(--gray);
+
+}
+
+.doctor-booking-details strong {
+
+    color: var(--dark);
+
+}
+
+.clinic-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+}
+
+.clinic-info span {
+
+    font-size: 26px;
+
+}
+
+.clinic-info strong {
+
+    color: var(--dark);
+
+}
+
+.clinic-info p {
+
+    margin-top: 3px;
+
+    color: #94A3B8;
+
+    font-size: 13px;
+
+}
+
+/* ==========================================================
+                    BOOKING FORM
+========================================================== */
+
+.booking-form-card {
+
+    padding: 38px;
+
+    background: var(--white);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-hover);
+
+}
+
+.booking-form-heading {
+
+    margin-bottom: 30px;
+
+}
+
+.booking-form-heading h3 {
+
+    margin-bottom: 7px;
+
+    color: var(--dark);
+
+    font-size: 27px;
+
+}
+
+.booking-form-heading p {
+
+    color: var(--gray);
+
+}
+
+/* ==========================================================
+                        FORM
+========================================================== */
+
+.form-group {
+
+    margin-bottom: 22px;
+
+}
+
+.form-group label,
+.booking-form-card label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #334155;
+
+    font-weight: 600;
+
+}
+
+.form-control {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-md);
+
+    background: var(--white);
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+
+    box-sizing: border-box;
+
+}
+
+.form-control:focus {
+
+    border-color: var(--primary);
+
+    box-shadow: 0 0 0 3px rgba(37,99,235,.10);
+
+}
+
+textarea.form-control {
+
+    resize: vertical;
+
+}
+
+.two-columns {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+/* ==========================================================
+                APPOINTMENT SUMMARY
+========================================================== */
+
+.appointment-summary {
+
+    margin: 28px 0;
+
+    padding: 22px;
+
+    background: #F4F8FF;
+
+    border: 1px solid #DCE8FF;
+
+    border-radius: var(--radius-md);
+
+}
+
+.summary-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+
+}
+
+.summary-heading h4 {
+
+    margin: 0;
+
+    color: var(--dark);
+
+    font-size: 18px;
+
+}
+
+.summary-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid #E2E8F0;
+
+}
+
+.summary-row:last-child {
+
+    border-bottom: none;
+
+}
+
+.summary-row span {
+
+    color: var(--gray);
+
+}
+
+.summary-row strong {
+
+    color: var(--dark);
+
+}
+
+.summary-fee strong {
+
+    color: var(--primary);
+
+    font-size: 18px;
+
+}
+
+/* ==========================================================
+                    ACTIONS
+========================================================== */
+
+.booking-submit {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: var(--radius-md);
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+}
+
+.booking-note {
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    color: #94A3B8;
+
+    font-size: 13px;
+
+}
+/* ==========================================================
+                    SUMMARY PAGE
+========================================================== */
+
+.summary-section {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 60px 20px;
+
+    background: var(--light);
+
+}
+
+/* ==========================================================
+                SUMMARY CONTAINER
+========================================================== */
+
+.summary-container {
+
+    width: 100%;
+
+    max-width: 750px;
+
+}
+
+/* ==========================================================
+                SUMMARY CARD
+========================================================== */
+
+#summaryCard {
+
+    padding: 50px;
+
+    background: var(--white);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-hover);
+
+    text-align: center;
+
+}
+
+/* ==========================================================
+                SUCCESS MESSAGE
+========================================================== */
+
+.success-icon {
+
+    margin-bottom: 20px;
+
+    font-size: 80px;
+
+    animation: pop .5s ease;
+
+}
+
+.success-text {
+
+    margin-bottom: 35px;
+
+    color: var(--gray);
+
+    line-height: 1.7;
+
+}
+
+/* ==========================================================
+                APPOINTMENT DETAILS
+========================================================== */
+
+.summary-info {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    margin-top: 30px;
+
+    text-align: left;
+
+}
+
+.summary-info div {
+
+    padding: 18px;
+
+    background: #F8FAFC;
+
+    border-radius: var(--radius-md);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+
+}
+
+.summary-info div:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow);
+
+}
+
+.summary-info span {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+}
+
+.summary-info strong {
+
+    color: var(--dark);
+
+    font-size: 18px;
+
+}
+
+.confirmed {
+
+    color: #16A34A;
+
+    font-weight: 700;
+
+}
+
+/* ==========================================================
+                ACTION BUTTONS
+========================================================== */
+
+.summary-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    margin-top: 40px;
+
+}
+/* ==========================================================
+                    HISTORY PAGE
+========================================================== */
+
+.history-section {
+
+    min-height: 100vh;
+
+    padding: 80px 0;
+
+    background: var(--light);
+
+}
+
+/* ==========================================================
+                    HISTORY GRID
+========================================================== */
+
+.history-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+
+    gap: 25px;
+
+    margin-top: 40px;
+
+}
+
+/* ==========================================================
+                    HISTORY CARD
+========================================================== */
+
+.history-card {
+
+    padding: 25px;
+
+    background: var(--white);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+
+}
+
+.history-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: var(--shadow-hover);
+
+}
+
+/* ==========================================================
+                    CARD HEADER
+========================================================== */
+
+.history-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+.history-top h3 {
+
+    color: var(--dark);
+
+    font-size: 20px;
+
+}
+
+.history-top span {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 6px 15px;
+
+    background: #DCFCE7;
+
+    color: #15803D;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+/* ==========================================================
+                    HISTORY CONTENT
+========================================================== */
+
+.history-card p {
+
+    margin: 12px 0;
+
+    color: var(--gray);
+
+    line-height: 1.7;
+
+}
+
+.history-card strong {
+
+    color: var(--dark);
+
+}
+
+/* ==========================================================
+                    EMPTY STATE
+========================================================== */
+
+.empty-history {
+
+    padding: 80px 20px;
+
+    text-align: center;
+
+    color: var(--gray);
+
+}
+
+.empty-history h2 {
+
+    margin-bottom: 15px;
+
+    color: var(--dark);
+
+}
+
+.empty-history p {
+
+    max-width: 500px;
+
+    margin: 0 auto 25px;
+
+    line-height: 1.7;
+
+}
+
+/* ==========================================================
+                    FINAL UTILITIES
+========================================================== */
+
+.page-card {
+
+    background: var(--white);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+}
+
+.page-card:hover {
+
+    box-shadow: var(--shadow-hover);
+
+}
