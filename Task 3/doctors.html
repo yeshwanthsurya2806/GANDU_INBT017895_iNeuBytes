@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         META INFORMATION
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="PulseCare Doctor Management"
+    >
+
+    <meta
+        name="author"
+        content="G Yeshwanth Surya"
+    >
+
+    <title>Doctors | PulseCare Healthcare Management</title>
+
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/favicon.png"
+    >
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     SIDEBAR OVERLAY
+========================================================= -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+
+<aside
+    class="sidebar"
+    id="sidebar"
+>
+
+
+    <!-- LOGO -->
+
+    <div class="sidebar-logo">
+
+        <div class="logo-icon">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+        </div>
+
+        <div>
+
+            <h2>
+                Pulse<span>Care</span>
+            </h2>
+
+            <p>
+                Healthcare Management
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <nav class="sidebar-nav">
+
+        <p class="nav-heading">
+            MAIN MENU
+        </p>
+
+
+        <a
+            href="index.html"
+            class="nav-item"
+        >
+
+            <span class="nav-icon"><i class="fa-solid fa-chart-pie"></i></span>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <a
+            href="doctors.html"
+            class="nav-item active"
+        >
+
+            <span class="nav-icon"><i class="fa-solid fa-user-doctor"></i></span>
+
+            <span>
+                Doctors
+            </span>
+
+        </a>
+
+
+        <a
+            href="patients.html"
+            class="nav-item"
+        >
+
+            <span class="nav-icon"><i class="fa-solid fa-users"></i></span>
+
+            <span>
+                Patients
+            </span>
+
+        </a>
+
+
+        <a
+            href="appointments.html"
+            class="nav-item"
+        >
+
+            <span class="nav-icon"><i class="fa-solid fa-calendar-check"></i></span>
+
+            <span>
+                Appointments
+            </span>
+
+        </a>
+
+
+        <a
+            href="departments.html"
+            class="nav-item"
+        >
+
+            <span class="nav-icon"><i class="fa-solid fa-hospital"></i></span>
+
+            <span>
+                Departments
+            </span>
+
+        </a>
+
+
+        <p class="nav-heading nav-heading-space">
+            MANAGEMENT
+        </p>
+
+
+        <a
+            href="reports.html"
+            class="nav-item"
+        >
+
+            <span class="nav-icon"><i class="fa-solid fa-chart-column"></i></span>
+
+            <span>
+                Reports
+            </span>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item"
+            id="settingsLink"
+        >
+
+            <span class="nav-icon"><i class="fa-solid fa-gear"></i></span>
+
+            <span>
+                Settings
+            </span>
+
+        </a>
+
+    </nav>
+
+
+    <!-- =====================================================
+         SIDEBAR BOTTOM
+    ====================================================== -->
+
+    <div class="sidebar-bottom">
+
+        <div class="sidebar-user">
+
+            <div class="user-avatar">
+                GY
+            </div>
+
+            <div class="sidebar-user-info">
+
+                <strong>
+                    Admin
+                </strong>
+
+                <span>
+                    Administrator
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="sidebar-logout"
+            id="logoutBtn"
+        >
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="main-content">
+
+
+    <!-- =====================================================
+         TOP NAVIGATION
+    ====================================================== -->
+
+    <header class="topbar">
+
+
+        <button
+            class="menu-toggle"
+            id="mobileMenuBtn"
+            aria-label="Open navigation menu"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <div class="topbar-left">
+
+            <h1>
+                Doctor Management
+            </h1>
+
+            <p class="topbar-greeting">
+                Manage healthcare specialists and their information.
+            </p>
+
+        </div>
+
+
+        <div class="topbar-right">
+
+
+            <!-- SEARCH -->
+
+            <button
+                class="icon-button"
+                id="globalSearchBtn"
+                aria-label="Search"
+            >
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </button>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <button
+                class="icon-button"
+                id="notificationBtn"
+                aria-label="Notifications"
+            >
+
+                <i class="fa-regular fa-bell"></i>
+
+                <span class="notification-badge">
+                    3
+                </span>
+
+            </button>
+
+
+            <!-- USER -->
+
+            <div class="topbar-user">
+
+                <div class="user-avatar">
+                    GY
+                </div>
+
+                <div class="topbar-user-info">
+
+                    <strong>
+                        G. Yeshwanth Surya
+                    </strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         PAGE CONTENT
+    ====================================================== -->
+
+    <div class="content-container">
+
+
+        <!-- =================================================
+             PAGE HEADER
+        ================================================== -->
+
+        <div class="content-heading">
+
+            <div>
+
+                <span class="section-label">
+                    MANAGEMENT
+                </span>
+
+                <h2>
+                    Doctors
+                </h2>
+
+                <p>
+                    Add, edit, search and manage all registered
+                    healthcare specialists.
+                </p>
+
+            </div>
+
+
+            <div class="page-header-actions">
+
+                <button
+                    class="primary-button"
+                    id="addDoctorBtn"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add Doctor
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================== -->
+
+        <div class="mini-stat-grid">
+
+
+            <div class="mini-stat">
+
+                <span>
+                    Total Doctors
+                </span>
+
+                <strong id="doctorTotalCount">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="mini-stat">
+
+                <span>
+                    Active Doctors
+                </span>
+
+                <strong id="doctorActiveCount">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="mini-stat">
+
+                <span>
+                    Departments Covered
+                </span>
+
+                <strong id="doctorDepartmentCount">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="mini-stat">
+
+                <span>
+                    Average Consultation Fee
+                </span>
+
+                <strong id="doctorAverageFee">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             DOCTOR MANAGEMENT CARD
+        ================================================== -->
+
+        <div class="management-card">
+
+
+            <!-- TOOLBAR -->
+
+            <div class="management-toolbar">
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="doctorSearch"
+                        placeholder="Search by name, department or qualification..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- DEPARTMENT FILTER -->
+
+                <select
+                    id="doctorDepartmentFilter"
+                    class="filter-select"
+                >
+
+                    <option value="All">
+                        All Departments
+                    </option>
+
+                    <option value="Cardiology">
+                        Cardiology
+                    </option>
+
+                    <option value="Neurology">
+                        Neurology
+                    </option>
+
+                    <option value="Dental">
+                        Dental
+                    </option>
+
+                    <option value="Orthopedics">
+                        Orthopedics
+                    </option>
+
+                    <option value="Pediatrics">
+                        Pediatrics
+                    </option>
+
+                </select>
+
+
+                <!-- STATUS FILTER -->
+
+                <select
+                    id="doctorStatusFilter"
+                    class="filter-select"
+                >
+
+                    <option value="All">
+                        All Status
+                    </option>
+
+                    <option value="Active">
+                        Active
+                    </option>
+
+                    <option value="Inactive">
+                        Inactive
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 DOCTOR TABLE
+            ================================================== -->
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Doctor
+                            </th>
+
+                            <th>
+                                Department
+                            </th>
+
+                            <th>
+                                Qualification
+                            </th>
+
+                            <th>
+                                Experience
+                            </th>
+
+                            <th>
+                                Fee
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Actions
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody
+                        id="doctorsTable"
+                    >
+
+                        <!-- JavaScript generated rows -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- =================================================
+                 EMPTY STATE
+            ================================================== -->
+
+            <div
+                id="doctorEmptyState"
+                class="empty-state"
+                style="display:none;"
+            >
+
+                <div class="empty-state-icon">
+                    👨‍⚕️
+                </div>
+
+                <h3>
+                    No Doctors Found
+                </h3>
+
+                <p>
+                    Try changing your search or filter.
+                </p>
+
+            </div>
+
+
+            <!-- PAGINATION / INFO -->
+
+            <div class="pagination">
+
+                <span
+                    class="pagination-info"
+                    id="doctorResultsInfo"
+                >
+                    Showing 0 doctors
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         ADD / EDIT DOCTOR MODAL
+    ====================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="doctorModalOverlay"
+    >
+
+        <div class="modal">
+
+
+            <!-- MODAL HEADER -->
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="section-label">
+                        DOCTOR MANAGEMENT
+                    </span>
+
+                    <h2 id="doctorModalTitle">
+                        Add Doctor
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="modal-close"
+                    id="doctorModalClose"
+                    aria-label="Close modal"
+                >
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <!-- MODAL BODY -->
+
+            <div id="doctorModalBody">
+
+
+                <form
+                    id="doctorForm"
+                    novalidate
+                >
+
+
+                    <!-- HIDDEN ID -->
+
+                    <input
+                        type="hidden"
+                        id="doctorId"
+                    >
+
+
+                    <!-- NAME -->
+
+                    <div class="form-group">
+
+                        <label for="doctorName">
+                            Full Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="doctorName"
+                            class="form-control"
+                            placeholder="Dr. John Smith"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- DEPARTMENT -->
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="doctorDepartment">
+                                Department *
+                            </label>
+
+                            <select
+                                id="doctorDepartment"
+                                class="form-control"
+                                required
+                            >
+
+                                <option value="">
+                                    Select Department
+                                </option>
+
+                                <option value="Cardiology">
+                                    Cardiology
+                                </option>
+
+                                <option value="Neurology">
+                                    Neurology
+                                </option>
+
+                                <option value="Dental">
+                                    Dental
+                                </option>
+
+                                <option value="Orthopedics">
+                                    Orthopedics
+                                </option>
+
+                                <option value="Pediatrics">
+                                    Pediatrics
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="doctorStatus">
+                                Status *
+                            </label>
+
+                            <select
+                                id="doctorStatus"
+                                class="form-control"
+                                required
+                            >
+
+                                <option value="Active">
+                                    Active
+                                </option>
+
+                                <option value="Inactive">
+                                    Inactive
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- QUALIFICATION -->
+
+                    <div class="form-group">
+
+                        <label for="doctorQualification">
+                            Qualification *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="doctorQualification"
+                            class="form-control"
+                            placeholder="MD, DM Cardiology"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- EXPERIENCE + FEE -->
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="doctorExperience">
+                                Experience *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="doctorExperience"
+                                class="form-control"
+                                placeholder="10 Years"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="doctorFee">
+                                Consultation Fee *
+                            </label>
+
+                            <input
+                                type="number"
+                                id="doctorFee"
+                                class="form-control"
+                                placeholder="800"
+                                min="0"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- PHONE -->
+
+                    <div class="form-group">
+
+                        <label for="doctorPhone">
+                            Phone Number *
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="doctorPhone"
+                            class="form-control"
+                            placeholder="9876543210"
+                            maxlength="10"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="doctorEmail">
+                            Email Address *
+                        </label>
+
+                        <input
+                            type="email"
+                            id="doctorEmail"
+                            class="form-control"
+                            placeholder="doctor@pulsecare.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- RATING -->
+
+                    <div class="form-group">
+
+                        <label for="doctorRating">
+                            Rating
+                        </label>
+
+                        <input
+                            type="number"
+                            id="doctorRating"
+                            class="form-control"
+                            placeholder="5"
+                            min="0"
+                            max="5"
+                            step="0.1"
+                            value="5"
+                        >
+
+                    </div>
+
+
+                    <!-- FORM FOOTER -->
+
+                    <div class="form-footer">
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="doctorCancelBtn"
+                        >
+
+                            Cancel
+
+                        </button>
+
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Save Doctor
+
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         DELETE CONFIRMATION MODAL
+    ====================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="doctorDeleteOverlay"
+    >
+
+        <div class="modal">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="section-label">
+                        CONFIRM ACTION
+                    </span>
+
+                    <h2>
+                        Delete Doctor
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="modal-close"
+                    id="doctorDeleteClose"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="confirm-box">
+
+                <div class="confirm-icon">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                </div>
+
+
+                <h3>
+                    Delete this doctor?
+                </h3>
+
+
+                <p id="doctorDeleteMessage">
+
+                    This action cannot be undone.
+
+                </p>
+
+
+                <div class="confirm-actions">
+
+                    <button
+                        class="secondary-button"
+                        id="doctorDeleteCancel"
+                    >
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        class="danger-button"
+                        id="doctorDeleteConfirm"
+                    >
+
+                        <i class="fa-solid fa-trash"></i>
+
+                        Delete Doctor
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        id="toastContainer"
+        class="toast-container"
+    ></div>
+
+
+</main>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="js/storage.js"></script>
+
+<script src="js/main.js"></script>
+
+<script src="js/doctors.js"></script>
+
+
+</body>
+
+</html>

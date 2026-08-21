@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="PulseCare Healthcare Management Dashboard"
+    >
+
+    <meta
+        name="author"
+        content="G Yeshwanth Surya"
+    >
+
+    <title>Dashboard | PulseCare Healthcare Management</title>
+
+
+    <!-- FAVICON -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/favicon.png"
+    >
+
+
+    <!-- GOOGLE FONT -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     SIDEBAR OVERLAY
+========================================================= -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+
+<aside
+    class="sidebar"
+    id="sidebar"
+>
+
+
+    <!-- =====================================================
+         LOGO
+    ====================================================== -->
+
+    <div class="sidebar-logo">
+
+        <div class="logo-icon">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+        </div>
+
+        <div>
+
+            <h2>
+                Pulse<span>Care</span>
+            </h2>
+
+            <p>
+                Healthcare Management
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <nav class="sidebar-nav">
+
+
+        <p class="nav-heading">
+            MAIN MENU
+        </p>
+
+
+        <a
+            href="index.html"
+            class="nav-item active"
+        >
+
+            <span class="nav-icon">
+                <i class="fa-solid fa-chart-pie"></i>
+            </span>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <a
+            href="doctors.html"
+            class="nav-item"
+        >
+
+            <span class="nav-icon">
+                <i class="fa-solid fa-user-doctor"></i>
+            </span>
+
+            <span>
+                Doctors
+            </span>
+
+        </a>
+
+
+        <a
+            href="patients.html"
+            class="nav-item"
+        >
+
+            <span class="nav-icon">
+                <i class="fa-solid fa-users"></i>
+            </span>
+
+            <span>
+                Patients
+            </span>
+
+        </a>
+
+
+        <a
+            href="appointments.html"
+            class="nav-item"
+        >
+
+            <span class="nav-icon">
+                <i class="fa-solid fa-calendar-check"></i>
+            </span>
+
+            <span>
+                Appointments
+            </span>
+
+        </a>
+
+
+        <a
+            href="departments.html"
+            class="nav-item"
+        >
+
+            <span class="nav-icon">
+                <i class="fa-solid fa-hospital"></i>
+            </span>
+
+            <span>
+                Departments
+            </span>
+
+        </a>
+
+
+        <p class="nav-heading nav-heading-space">
+            MANAGEMENT
+        </p>
+
+
+        <a
+            href="reports.html"
+            class="nav-item"
+        >
+
+            <span class="nav-icon">
+                <i class="fa-solid fa-chart-column"></i>
+            </span>
+
+            <span>
+                Reports
+            </span>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item"
+            id="settingsLink"
+        >
+
+            <span class="nav-icon">
+                <i class="fa-solid fa-gear"></i>
+            </span>
+
+            <span>
+                Settings
+            </span>
+
+        </a>
+
+
+    </nav>
+
+
+    <!-- =====================================================
+         SIDEBAR BOTTOM
+    ====================================================== -->
+
+    <div class="sidebar-bottom">
+
+
+        <div class="sidebar-user">
+
+            <div class="user-avatar">
+                GY
+            </div>
+
+            <div class="sidebar-user-info">
+
+                <strong>
+                    Admin
+                </strong>
+
+                <span>
+                    Administrator
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="sidebar-logout"
+            id="logoutBtn"
+        >
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+
+    </div>
+
+
+</aside>
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="main-content">
+
+
+    <!-- =====================================================
+         TOPBAR
+    ====================================================== -->
+
+    <header class="topbar">
+
+
+        <!-- LEFT SIDE -->
+
+        <div class="topbar-left">
+
+
+            <!-- MOBILE MENU -->
+
+            <button
+                class="menu-toggle"
+                id="mobileMenuBtn"
+                aria-label="Open navigation menu"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+                <p class="topbar-greeting">
+                    Welcome back, Admin 👋
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="topbar-right">
+
+
+            <!-- SEARCH -->
+
+            <button
+                class="icon-button"
+                id="globalSearchBtn"
+                aria-label="Search"
+                title="Search"
+            >
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </button>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <div class="notification-wrapper">
+
+                <button
+                    class="icon-button notification-button"
+                    id="notificationBtn"
+                    aria-label="Notifications"
+                    title="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span
+                        class="notification-dot"
+                        id="notificationCount"
+                    ></span>
+
+                </button>
+
+
+                <!-- NOTIFICATION PANEL -->
+
+                <div
+                    class="notification-panel"
+                    id="notificationPanel"
+                    style="display:none;"
+                >
+
+                    <div class="notification-panel-header">
+
+                        <strong>
+                            Notifications
+                        </strong>
+
+                        <span>
+                            3 new
+                        </span>
+
+                    </div>
+
+
+                    <div class="notification-item">
+
+                        <div class="notification-item-icon">
+
+                            <i class="fa-solid fa-calendar-check"></i>
+
+                        </div>
+
+                        <div class="notification-item-content">
+
+                            <strong>
+                                New appointment
+                            </strong>
+
+                            <p>
+                                A new appointment has been scheduled.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="notification-item">
+
+                        <div class="notification-item-icon">
+
+                            <i class="fa-solid fa-user-plus"></i>
+
+                        </div>
+
+                        <div class="notification-item-content">
+
+                            <strong>
+                                New patient
+                            </strong>
+
+                            <p>
+                                A new patient has been registered.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="notification-item">
+
+                        <div class="notification-item-icon">
+
+                            <i class="fa-solid fa-user-doctor"></i>
+
+                        </div>
+
+                        <div class="notification-item-content">
+
+                            <strong>
+                                Doctor updated
+                            </strong>
+
+                            <p>
+                                Doctor information was recently updated.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- USER -->
+
+            <div class="topbar-user">
+
+                <div class="user-avatar">
+                    GY
+                </div>
+
+                <div class="topbar-user-info">
+
+                    <strong>
+                        G. Yeshwanth Surya
+                    </strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTENT
+    ====================================================== -->
+
+    <div class="content-container">
+
+
+        <!-- =================================================
+             PAGE HEADING
+        ================================================== -->
+
+        <div class="content-heading">
+
+
+            <div>
+
+                <span class="section-label">
+                    PULSECARE ADMINISTRATION
+                </span>
+
+                <h2>
+                    Healthcare Overview
+                </h2>
+
+                <p>
+                    Monitor your healthcare management system
+                    from one centralized dashboard.
+                </p>
+
+            </div>
+
+
+            <div class="page-actions">
+
+                <button
+                    class="secondary-button"
+                    id="refreshDashboard"
+                >
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    Refresh
+
+                </button>
+
+
+                <a
+                    href="appointments.html"
+                    class="primary-button"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    New Appointment
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================== -->
+
+        <section
+            class="stats-grid"
+            id="dashboardStats"
+        >
+
+
+            <!-- DOCTORS -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon doctors-icon">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                </div>
+
+
+                <div class="stat-content">
+
+                    <span>
+                        Total Doctors
+                    </span>
+
+                    <h3 id="totalDoctors">
+                        0
+                    </h3>
+
+                    <div class="stat-positive">
+
+                        <i class="fa-solid fa-arrow-up"></i>
+
+                        8.2%
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PATIENTS -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon patients-icon">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+
+                <div class="stat-content">
+
+                    <span>
+                        Total Patients
+                    </span>
+
+                    <h3 id="totalPatients">
+                        0
+                    </h3>
+
+                    <div class="stat-positive">
+
+                        <i class="fa-solid fa-arrow-up"></i>
+
+                        12.5%
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- APPOINTMENTS -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon appointments-icon">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                </div>
+
+
+                <div class="stat-content">
+
+                    <span>
+                        Total Appointments
+                    </span>
+
+                    <h3 id="totalAppointments">
+                        0
+                    </h3>
+
+                    <div class="stat-positive">
+
+                        <i class="fa-solid fa-arrow-up"></i>
+
+                        5.4%
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DEPARTMENTS -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon departments-icon">
+
+                    <i class="fa-solid fa-hospital"></i>
+
+                </div>
+
+
+                <div class="stat-content">
+
+                    <span>
+                        Departments
+                    </span>
+
+                    <h3 id="totalDepartments">
+                        0
+                    </h3>
+
+                    <div class="stat-positive">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Active
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             QUICK OVERVIEW
+        ================================================== -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- WELCOME CARD -->
+
+            <div class="dashboard-card welcome-card">
+
+                <div class="welcome-content">
+
+                    <span class="section-label">
+                        PULSECARE ADMINISTRATION
+                    </span>
+
+                    <h2>
+                        Manage Healthcare,
+                        Simplify Patient Care.
+                    </h2>
+
+                    <p>
+                        Manage doctors, patients,
+                        appointments, departments and
+                        healthcare operations from one
+                        centralized platform.
+                    </p>
+
+                    <a
+                        href="patients.html"
+                        class="primary-button"
+                    >
+
+                        <i class="fa-solid fa-users"></i>
+
+                        Manage Patients
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Quick Actions
+                        </h3>
+
+                        <p>
+                            Frequently used management tools
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+
+                    <a
+                        href="doctors.html"
+                        class="quick-action"
+                    >
+
+                        <div class="quick-action-icon">
+
+                            <i class="fa-solid fa-user-doctor"></i>
+
+                        </div>
+
+                        <strong>
+                            Manage Doctors
+                        </strong>
+
+                        <span>
+                            Add or edit doctors
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="patients.html"
+                        class="quick-action"
+                    >
+
+                        <div class="quick-action-icon">
+
+                            <i class="fa-solid fa-user-plus"></i>
+
+                        </div>
+
+                        <strong>
+                            Add Patient
+                        </strong>
+
+                        <span>
+                            Register new patient
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="appointments.html"
+                        class="quick-action"
+                    >
+
+                        <div class="quick-action-icon">
+
+                            <i class="fa-solid fa-calendar-plus"></i>
+
+                        </div>
+
+                        <strong>
+                            Appointments
+                        </strong>
+
+                        <span>
+                            View appointments
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="departments.html"
+                        class="quick-action"
+                    >
+
+                        <div class="quick-action-icon">
+
+                            <i class="fa-solid fa-building"></i>
+
+                        </div>
+
+                        <strong>
+                            Departments
+                        </strong>
+
+                        <span>
+                            Manage departments
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             APPOINTMENTS + ACTIVITY
+        ================================================== -->
+
+        <section class="dashboard-grid equal">
+
+
+            <!-- UPCOMING APPOINTMENTS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Upcoming Appointments
+                        </h3>
+
+                        <p>
+                            Latest scheduled consultations
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="appointments.html"
+                        class="text-button"
+                    >
+                        View All
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="appointment-list"
+                    id="upcomingAppointments"
+                >
+
+                    <div class="loading">
+
+                        <div class="spinner"></div>
+
+                        Loading appointments...
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECENT ACTIVITY -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Recent Activity
+                        </h3>
+
+                        <p>
+                            Latest system updates
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="activity-list">
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+
+                            <i class="fa-solid fa-user-plus"></i>
+
+                        </div>
+
+                        <div class="activity-content">
+
+                            <strong>
+                                New patient registered
+                            </strong>
+
+                            <p>
+                                Patient information added to the system.
+                            </p>
+
+                        </div>
+
+                        <span class="activity-time">
+                            10 min
+                        </span>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+
+                            <i class="fa-solid fa-calendar-check"></i>
+
+                        </div>
+
+                        <div class="activity-content">
+
+                            <strong>
+                                Appointment scheduled
+                            </strong>
+
+                            <p>
+                                New consultation has been booked.
+                            </p>
+
+                        </div>
+
+                        <span class="activity-time">
+                            25 min
+                        </span>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+
+                            <i class="fa-solid fa-user-doctor"></i>
+
+                        </div>
+
+                        <div class="activity-content">
+
+                            <strong>
+                                Doctor information updated
+                            </strong>
+
+                            <p>
+                                Specialist profile was updated.
+                            </p>
+
+                        </div>
+
+                        <span class="activity-time">
+                            1 hr
+                        </span>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+
+                            <i class="fa-solid fa-hospital"></i>
+
+                        </div>
+
+                        <div class="activity-content">
+
+                            <strong>
+                                Department updated
+                            </strong>
+
+                            <p>
+                                Department information was modified.
+                            </p>
+
+                        </div>
+
+                        <span class="activity-time">
+                            2 hrs
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             DEPARTMENT OVERVIEW
+        ================================================== -->
+
+        <section class="dashboard-card">
+
+
+            <div class="card-header">
+
+                <div>
+
+                    <h3>
+                        Department Overview
+                    </h3>
+
+                    <p>
+                        Current doctors available by department
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="departments.html"
+                    class="text-button"
+                >
+                    Manage Departments
+                </a>
+
+            </div>
+
+
+            <div
+                class="department-grid"
+                id="departmentOverview"
+            >
+
+                <!-- JavaScript will populate departments -->
+
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         TOAST CONTAINER
+    ====================================================== -->
+
+    <div
+        id="toastContainer"
+        class="toast-container"
+    ></div>
+
+
+</main>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="js/storage.js"></script>
+
+<script src="js/main.js"></script>
+
+
+</body>
+
+</html>
