@@ -91,37 +91,7 @@ The website is fully responsive and optimized for:
 
 ---
 
-## 📸 Project Screenshots
-
-### Home Page
-
-> *(Add screenshot here)*
-
----
-
-### Services Section
-
-> *(Add screenshot here)*
-
----
-
-### Doctors Section
-
-> *(Add screenshot here)*
-
----
-
-### Appointment Form
-
-> *(Add screenshot here)*
-
----
-
-### Mobile View
-
-> *(Add screenshot here)*
-
----
+### Doctors Secti
 
 ## 🚀 How to Run the Project
 
