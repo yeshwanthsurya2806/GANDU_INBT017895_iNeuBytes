@@ -115,44 +115,6 @@ The application is fully responsive and optimized for:
 
 ---
 
-# 📸 Project Screenshots
-
-## 🏠 Homepage
-
-> *(Add Homepage Screenshot Here)*
-
----
-
-## 👨‍⚕️ Doctors Page
-
-> *(Add Doctors Page Screenshot Here)*
-
----
-
-## 📄 Doctor Details
-
-> *(Add Doctor Details Screenshot Here)*
-
----
-
-## 📅 Appointment Booking
-
-> *(Add Booking Page Screenshot Here)*
-
----
-
-## ✅ Appointment Confirmation
-
-> *(Add Summary Page Screenshot Here)*
-
----
-
-## 📚 Appointment History
-
-> *(Add History Page Screenshot Here)*
-
----
-
 # 🚀 How to Run the Project
 
 ### 1. Clone the repository
@@ -247,7 +209,7 @@ Vellore Institute of Technology, Vellore
 https://github.com/yeshwanthsurya2806
 
 **LinkedIn:**
-*(Add your LinkedIn Profile Link)*
+https://www.linkedin.com/in/yeshwanthsurya/
 
 ---
 
