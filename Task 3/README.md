@@ -218,44 +218,6 @@ The application is fully responsive and optimized for:
 
 ---
 
-# 📸 Project Screenshots
-
-## 🏠 Dashboard
-
-> *(Add Dashboard Screenshot Here)*
-
----
-
-## 👨‍⚕️ Doctor Management
-
-> *(Add Doctor Management Screenshot Here)*
-
----
-
-## 👤 Patient Management
-
-> *(Add Patient Management Screenshot Here)*
-
----
-
-## 📅 Appointment Management
-
-> *(Add Appointment Management Screenshot Here)*
-
----
-
-## 🏢 Department Management
-
-> *(Add Department Management Screenshot Here)*
-
----
-
-## 📈 Reports & Statistics
-
-> *(Add Reports Screenshot Here)*
-
----
-
 # 🚀 How to Run the Project
 
 ### 1. Clone the repository
@@ -462,7 +424,7 @@ https://github.com/yeshwanthsurya2806
 
 **LinkedIn:**
 
-*(Add your LinkedIn Profile Link)*
+https://www.linkedin.com/in/yeshwanthsurya/
 
 ---
 
