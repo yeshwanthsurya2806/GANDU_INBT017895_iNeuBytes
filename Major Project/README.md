@@ -622,7 +622,7 @@ https://github.com/yeshwanthsurya2806
 
 **LinkedIn:**
 
-*(Add your LinkedIn Profile Link)*
+https://www.linkedin.com/in/yeshwanthsurya/
 
 ---
 
