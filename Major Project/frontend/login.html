@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="PulseCare Healthcare Management System Login"
+    >
+
+    <title>Login | PulseCare</title>
+
+
+    <!-- Google Font -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- Existing styles -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+
+    <style>
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8fafc;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 460px;
+            padding: 25px;
+        }
+
+        .login-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.10);
+        }
+
+        .login-logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-logo .logo-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 15px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #2563eb;
+            color: #ffffff;
+            font-size: 28px;
+        }
+
+        .login-logo h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .login-logo h1 span {
+            color: #2563eb;
+        }
+
+        .login-logo p {
+            margin-top: 5px;
+            color: #64748b;
+        }
+
+        .login-title {
+            margin-bottom: 25px;
+        }
+
+        .login-title h2 {
+            margin-bottom: 5px;
+        }
+
+        .login-title p {
+            color: #64748b;
+        }
+
+        .login-form-group {
+            margin-bottom: 18px;
+        }
+
+        .login-form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .login-input-wrapper {
+            position: relative;
+        }
+
+        .login-input-wrapper i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 14px 15px 14px 45px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .login-input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+        }
+
+        .login-button {
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            padding: 14px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .login-button:hover {
+            background: #1d4ed8;
+        }
+
+        .login-message {
+            display: none;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+        .login-message.error {
+            display: block;
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .login-message.success {
+            display: block;
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .demo-accounts {
+            margin-top: 25px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+
+        .demo-accounts strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .demo-account {
+            margin: 4px 0;
+            color: #475569;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="login-container">
+
+    <div class="login-card">
+
+
+        <!-- LOGO -->
+
+        <div class="login-logo">
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+            </div>
+
+            <h1>
+                Pulse<span>Care</span>
+            </h1>
+
+            <p>
+                Healthcare Management System
+            </p>
+
+        </div>
+
+
+        <!-- TITLE -->
+
+        <div class="login-title">
+
+            <h2>
+                Welcome Back
+            </h2>
+
+            <p>
+                Sign in to continue to your dashboard.
+            </p>
+
+        </div>
+
+
+        <!-- MESSAGE -->
+
+        <div
+            id="loginMessage"
+            class="login-message"
+        ></div>
+
+
+        <!-- FORM -->
+
+        <form id="loginForm">
+
+
+            <!-- EMAIL -->
+
+            <div class="login-form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <div class="login-input-wrapper">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input
+                        type="email"
+                        id="email"
+                        class="login-input"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="login-form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <div class="login-input-wrapper">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="password"
+                        class="login-input"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="login-button"
+                id="loginButton"
+            >
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Sign In
+
+            </button>
+
+        </form>
+
+
+        <!-- DEMO ACCOUNTS -->
+
+        <div class="demo-accounts">
+
+            <strong>
+                Demo Accounts
+            </strong>
+
+            <div class="demo-account">
+                Admin: admin@pulsecare.com / Admin@123
+            </div>
+
+            <div class="demo-account">
+                Doctor: doctor@pulsecare.com / Doctor@123
+            </div>
+
+            <div class="demo-account">
+                Patient: patient@pulsecare.com / Patient@123
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/api.js"></script>
+
+<script>
+
+const loginForm =
+    document.getElementById("loginForm");
+
+const loginButton =
+    document.getElementById("loginButton");
+
+const loginMessage =
+    document.getElementById("loginMessage");
+
+
+loginForm.addEventListener(
+    "submit",
+    async (event) => {
+
+        event.preventDefault();
+
+
+        const email =
+            document
+                .getElementById("email")
+                .value
+                .trim();
+
+
+        const password =
+            document
+                .getElementById("password")
+                .value;
+
+
+        loginButton.disabled = true;
+
+        loginButton.innerHTML =
+            '<i class="fa-solid fa-spinner fa-spin"></i> Signing in...';
+
+
+        loginMessage.className =
+            "login-message";
+
+        loginMessage.textContent = "";
+
+
+        try {
+
+            const result =
+                await PulseCareAPI.auth.login(
+                    email,
+                    password
+                );
+
+
+            loginMessage.className =
+                "login-message success";
+
+            loginMessage.textContent =
+                "Login successful. Redirecting...";
+
+
+            const role =
+                result.user.role;
+
+
+            setTimeout(() => {
+
+                if (role === "admin") {
+
+                    window.location.href =
+                        "/index.html";
+
+                } else if (role === "doctor") {
+
+                    window.location.href =
+                        "/doctor-dashboard.html";
+
+                } else if (role === "patient") {
+
+                    window.location.href =
+                        "/patient-dashboard.html";
+
+                }
+
+            }, 500);
+
+
+        } catch (error) {
+
+            loginMessage.className =
+                "login-message error";
+
+            loginMessage.textContent =
+                error.message;
+
+
+            loginButton.disabled = false;
+
+            loginButton.innerHTML =
+                '<i class="fa-solid fa-right-to-bracket"></i> Sign In';
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>

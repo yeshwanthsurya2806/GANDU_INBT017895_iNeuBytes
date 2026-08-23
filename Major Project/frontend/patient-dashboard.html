@@ -1,0 +1,2298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Patient Dashboard - PulseCare</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Your existing stylesheet -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           PATIENT DASHBOARD
+        ===================================================== */
+
+        .patient-page {
+            padding: 24px;
+        }
+
+
+        /* =====================================================
+           WELCOME
+        ===================================================== */
+
+        .patient-welcome {
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #1d4ed8
+                );
+
+            color: white;
+
+            border-radius: 18px;
+
+            padding: 28px;
+
+            margin-bottom: 24px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .patient-welcome h2 {
+            margin: 0 0 7px;
+
+            font-size: 25px;
+        }
+
+        .patient-welcome p {
+            margin: 0;
+
+            opacity: .9;
+
+            font-size: 14px;
+        }
+
+        .welcome-icon {
+            width: 65px;
+            height: 65px;
+
+            border-radius: 18px;
+
+            background: rgba(255,255,255,.15);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 28px;
+        }
+
+
+        /* =====================================================
+           STATISTICS
+        ===================================================== */
+
+        .patient-stat-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
+
+            gap: 18px;
+
+            margin-bottom: 24px;
+        }
+
+        .patient-stat-card {
+
+            background: white;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 16px;
+
+            padding: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(15,23,42,.05);
+        }
+
+        .patient-stat-icon {
+
+            width: 48px;
+            height: 48px;
+
+            border-radius: 13px;
+
+            background: #eff6ff;
+
+            color: #2563eb;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 20px;
+        }
+
+        .patient-stat-card:nth-child(2)
+        .patient-stat-icon {
+
+            background: #fef3c7;
+
+            color: #d97706;
+        }
+
+        .patient-stat-card:nth-child(3)
+        .patient-stat-icon {
+
+            background: #dcfce7;
+
+            color: #16a34a;
+        }
+
+        .patient-stat-card:nth-child(4)
+        .patient-stat-icon {
+
+            background: #dbeafe;
+
+            color: #1d4ed8;
+        }
+
+        .patient-stat-card p {
+
+            margin: 0 0 5px;
+
+            color: #64748b;
+
+            font-size: 12px;
+        }
+
+        .patient-stat-card h3 {
+
+            margin: 0;
+
+            color: #0f172a;
+
+            font-size: 25px;
+        }
+
+
+        /* =====================================================
+           MAIN GRID
+        ===================================================== */
+
+        .patient-main-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 2fr)
+                minmax(300px, 1fr);
+
+            gap: 22px;
+
+            margin-bottom: 24px;
+        }
+
+
+        /* =====================================================
+           CARD
+        ===================================================== */
+
+        .patient-card {
+
+            background: white;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 16px;
+
+            padding: 22px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(15,23,42,.05);
+        }
+
+        .patient-card-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 20px;
+        }
+
+        .patient-card-header h3 {
+
+            margin: 0;
+
+            color: #0f172a;
+
+            font-size: 17px;
+        }
+
+        .patient-card-header p {
+
+            margin: 5px 0 0;
+
+            color: #64748b;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           APPOINTMENTS
+        ===================================================== */
+
+        .patient-appointment-list {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+        .patient-appointment {
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 13px;
+
+            padding: 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+        }
+
+        .patient-doctor-info {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+        .doctor-avatar {
+
+            width: 44px;
+            height: 44px;
+
+            border-radius: 12px;
+
+            background: #eff6ff;
+
+            color: #2563eb;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: 700;
+        }
+
+        .patient-doctor-info strong {
+
+            display: block;
+
+            color: #0f172a;
+
+            font-size: 14px;
+        }
+
+        .patient-doctor-info span {
+
+            display: block;
+
+            color: #64748b;
+
+            font-size: 12px;
+
+            margin-top: 3px;
+        }
+
+        .appointment-meta {
+
+            text-align: right;
+        }
+
+        .appointment-meta strong {
+
+            display: block;
+
+            color: #334155;
+
+            font-size: 13px;
+        }
+
+        .appointment-meta span {
+
+            display: block;
+
+            color: #64748b;
+
+            font-size: 12px;
+
+            margin-top: 3px;
+        }
+
+
+        /* =====================================================
+           STATUS
+        ===================================================== */
+
+        .status-badge {
+
+            display: inline-flex;
+
+            padding: 5px 9px;
+
+            border-radius: 20px;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            margin-top: 5px;
+        }
+
+        .status-pending {
+
+            background: #fef3c7;
+
+            color: #92400e;
+        }
+
+        .status-confirmed {
+
+            background: #dcfce7;
+
+            color: #166534;
+        }
+
+        .status-completed {
+
+            background: #dbeafe;
+
+            color: #1e40af;
+        }
+
+        .status-cancelled {
+
+            background: #fee2e2;
+
+            color: #991b1b;
+        }
+
+
+        /* =====================================================
+           QUICK ACTIONS
+        ===================================================== */
+
+        .quick-actions {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+        }
+
+        .quick-action {
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 13px;
+
+            padding: 17px;
+
+            background: white;
+
+            cursor: pointer;
+
+            text-align: left;
+
+            transition: .2s;
+        }
+
+        .quick-action:hover {
+
+            border-color: #2563eb;
+
+            background: #eff6ff;
+
+            transform: translateY(-2px);
+        }
+
+        .quick-action i {
+
+            color: #2563eb;
+
+            font-size: 19px;
+
+            margin-bottom: 10px;
+        }
+
+        .quick-action strong {
+
+            display: block;
+
+            color: #0f172a;
+
+            font-size: 13px;
+        }
+
+        .quick-action span {
+
+            display: block;
+
+            color: #64748b;
+
+            font-size: 11px;
+
+            margin-top: 3px;
+        }
+
+
+        /* =====================================================
+           MEDICAL RECORDS
+        ===================================================== */
+
+        .medical-record-list {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+        .medical-record {
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 12px;
+
+            padding: 15px;
+        }
+
+        .medical-record-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+        }
+
+        .medical-record strong {
+
+            color: #0f172a;
+
+            font-size: 14px;
+        }
+
+        .medical-record small {
+
+            color: #64748b;
+
+            font-size: 11px;
+        }
+
+        .medical-record p {
+
+            color: #475569;
+
+            font-size: 12px;
+
+            margin: 8px 0 0;
+        }
+
+
+        /* =====================================================
+           EMPTY / LOADING
+        ===================================================== */
+
+        .patient-empty {
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #64748b;
+
+            font-size: 13px;
+        }
+
+        .patient-empty i {
+
+            font-size: 28px;
+
+            margin-bottom: 10px;
+
+            color: #94a3b8;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .patient-stat-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .patient-main-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .patient-page {
+
+                padding: 15px;
+            }
+
+            .patient-welcome {
+
+                padding: 20px;
+            }
+
+            .patient-welcome h2 {
+
+                font-size: 20px;
+            }
+
+            .patient-stat-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .patient-appointment {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+            }
+
+            .appointment-meta {
+
+                text-align: left;
+
+                width: 100%;
+            }
+
+            .quick-actions {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        .patient-logout-btn {
+    position: fixed;
+    top: 18px;
+    right: 24px;
+    z-index: 10000;
+
+    border: none;
+    background: #fee2e2;
+    color: #dc2626;
+
+    padding: 10px 16px;
+
+    border-radius: 10px;
+
+    font-family: "Inter", Arial, sans-serif;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+@media (max-width: 600px) {
+    .patient-logout-btn {
+        top: 12px;
+        right: 12px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+.patient-logout-btn:hover {
+    background: #fecaca;
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   PATIENT NOTIFICATIONS
+========================================================= */
+
+.patient-notification-wrapper {
+    position: fixed;
+    top: 18px;
+    right: 125px;
+    z-index: 9999;
+}
+
+.patient-notification-btn {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+
+    border: 1px solid #dbe2ea;
+    border-radius: 12px;
+
+    background: #ffffff;
+    color: #1e3a8a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.patient-notification-btn {
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid #dbe2ea;
+    border-radius: 12px;
+
+    background: #ffffff;
+    color: #1e3a8a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.patient-notification-btn:hover {
+    background: #eff6ff;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   NOTIFICATION BADGE
+========================================================= */
+
+.patient-notification-badge {
+    position: absolute;
+
+    top: -5px;
+    right: -5px;
+
+    min-width: 19px;
+    height: 19px;
+
+    padding: 0 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ef4444;
+    color: white;
+
+    border-radius: 999px;
+
+    border: 2px solid white;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   NOTIFICATION PANEL
+========================================================= */
+
+.patient-notification-panel {
+    position: absolute;
+
+    top: 58px;
+    right: 0;
+
+    width: 380px;
+    max-width: calc(100vw - 30px);
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.18);
+
+    overflow: hidden;
+
+    display: none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.patient-notification-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 18px;
+
+    border-bottom: 1px solid #eef2f7;
+}
+
+.patient-notification-header strong {
+    display: block;
+
+    font-size: 16px;
+
+    color: #0f172a;
+}
+
+.patient-notification-header span {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 12px;
+
+    color: #64748b;
+}
+
+
+.patient-notification-close {
+    width: 32px;
+    height: 32px;
+
+    border: none;
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    border-radius: 8px;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   LIST
+========================================================= */
+
+.patient-notification-list {
+    max-height: 420px;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   ITEM
+========================================================= */
+
+.patient-notification-item {
+    display: flex;
+
+    gap: 12px;
+
+    padding: 16px 18px;
+
+    border-bottom: 1px solid #f1f5f9;
+
+    transition: background 0.2s ease;
+}
+
+.patient-notification-item:hover {
+    background: #f8fafc;
+}
+
+.patient-notification-item:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.patient-notification-icon {
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+
+    border-radius: 10px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.patient-notification-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.patient-notification-title {
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #0f172a;
+
+    margin-bottom: 4px;
+}
+
+.patient-notification-message {
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: #64748b;
+
+    word-break: break-word;
+}
+
+.patient-notification-time {
+    margin-top: 6px;
+
+    font-size: 11px;
+
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.patient-notification-empty {
+    padding: 45px 20px;
+
+    text-align: center;
+
+    color: #64748b;
+}
+
+.patient-notification-empty i {
+    display: block;
+
+    font-size: 32px;
+
+    color: #94a3b8;
+
+    margin-bottom: 12px;
+}
+
+.patient-notification-empty strong {
+    display: block;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+.patient-notification-empty span {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.patient-notification-loading {
+    min-height: 150px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.patient-notification-error {
+    padding: 30px 20px;
+
+    text-align: center;
+
+    color: #dc2626;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .patient-notification-wrapper {
+        top: 12px;
+        right: 75px;
+    }
+
+    .patient-notification-btn {
+        width: 42px;
+        height: 42px;
+    }
+
+    .patient-notification-panel {
+        position: fixed;
+
+        top: 65px;
+
+        left: 15px;
+        right: 15px;
+
+        width: auto;
+
+        max-width: none;
+    }
+
+}
+    </style>
+
+</head>
+
+
+<body>
+
+<button
+    type="button"
+    id="patientLogoutBtn"
+    class="patient-logout-btn"
+>
+    <i class="fa-solid fa-right-from-bracket"></i>
+    Logout
+</button>
+
+<!-- =========================================================
+     PATIENT NOTIFICATIONS
+========================================================= -->
+
+<div
+    class="patient-notification-wrapper"
+    id="patientNotificationWrapper"
+>
+
+    <button
+        type="button"
+        id="patientNotificationBtn"
+        class="patient-notification-btn"
+        aria-label="Notifications"
+        title="Notifications"
+    >
+
+        <i class="fa-regular fa-bell"></i>
+
+        <span
+            id="patientNotificationBadge"
+            class="patient-notification-badge"
+            style="display:none;"
+        >
+            0
+        </span>
+
+    </button>
+
+
+    <!-- =====================================================
+         NOTIFICATION PANEL
+    ====================================================== -->
+
+    <div
+        id="patientNotificationPanel"
+        class="patient-notification-panel"
+    >
+
+        <div class="patient-notification-header">
+
+            <div>
+
+                <strong>
+                    Notifications
+                </strong>
+
+                <span>
+                    Your latest updates
+                </span>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="patientNotificationClose"
+                class="patient-notification-close"
+                aria-label="Close notifications"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div
+            id="patientNotificationList"
+            class="patient-notification-list"
+        >
+
+            <div class="patient-notification-loading">
+
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                <span>
+                    Loading notifications...
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- =========================================================
+     MAIN PAGE
+========================================================= -->
+
+<main class="patient-page">
+
+
+    <!-- =====================================================
+         WELCOME
+    ====================================================== -->
+
+    <section class="patient-welcome">
+
+        <div>
+
+            <h2 id="patientWelcome">
+                Welcome back 👋
+            </h2>
+
+            <p>
+                Manage your appointments,
+                doctors and medical records
+                from one place.
+            </p>
+
+        </div>
+
+        <div class="welcome-icon">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         STATISTICS
+    ====================================================== -->
+
+    <section class="patient-stat-grid">
+
+
+        <div class="patient-stat-card">
+
+            <div class="patient-stat-icon">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+            </div>
+
+            <div>
+
+                <p>Total Appointments</p>
+
+                <h3 id="patientTotalAppointments">
+                    0
+                </h3>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="patient-stat-card">
+
+            <div class="patient-stat-icon">
+
+                <i class="fa-solid fa-clock"></i>
+
+            </div>
+
+            <div>
+
+                <p>Pending</p>
+
+                <h3 id="patientPendingAppointments">
+                    0
+                </h3>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="patient-stat-card">
+
+            <div class="patient-stat-icon">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+            <div>
+
+                <p>Confirmed</p>
+
+                <h3 id="patientConfirmedAppointments">
+                    0
+                </h3>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="patient-stat-card">
+
+            <div class="patient-stat-icon">
+
+                <i class="fa-solid fa-file-medical"></i>
+
+            </div>
+
+            <div>
+
+                <p>Completed</p>
+
+                <h3 id="patientCompletedAppointments">
+                    0
+                </h3>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MAIN GRID
+    ====================================================== -->
+
+    <section class="patient-main-grid">
+
+
+        <!-- =================================================
+             UPCOMING APPOINTMENTS
+        ================================================== -->
+
+        <div class="patient-card">
+
+            <div class="patient-card-header">
+
+                <div>
+
+                    <h3>
+                        Upcoming Appointments
+                    </h3>
+
+                    <p>
+                        Your scheduled consultations
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-button"
+                    onclick="openBookingModal()"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Book
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="patient-appointment-list"
+                id="patientAppointments"
+            >
+
+                <div class="patient-empty">
+
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+
+                    <p>
+                        Loading appointments...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             QUICK ACTIONS
+        ================================================== -->
+
+        <div class="patient-card">
+
+            <div class="patient-card-header">
+
+                <div>
+
+                    <h3>
+                        Quick Actions
+                    </h3>
+
+                    <p>
+                        Common healthcare actions
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+
+                <button
+                    class="quick-action"
+                    onclick="openBookingModal()"
+                >
+
+                    <i class="fa-solid fa-calendar-plus"></i>
+
+                    <strong>
+                        Book Appointment
+                    </strong>
+
+                    <span>
+                        Schedule a consultation
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="quick-action"
+                    onclick="loadDoctors()"
+                >
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                    <strong>
+                        Find a Doctor
+                    </strong>
+
+                    <span>
+                        Browse available doctors
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="quick-action"
+                    onclick="scrollToRecords()"
+                >
+
+                    <i class="fa-solid fa-file-medical"></i>
+
+                    <strong>
+                        Medical Records
+                    </strong>
+
+                    <span>
+                        View your history
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="quick-action"
+                    onclick="loadPatientProfile()"
+                >
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <strong>
+                        My Profile
+                    </strong>
+
+                    <span>
+                        View personal details
+                    </span>
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MEDICAL RECORDS
+    ====================================================== -->
+
+    <section
+        class="patient-card"
+        id="medicalRecordsSection"
+    >
+
+        <div class="patient-card-header">
+
+            <div>
+
+                <h3>
+                    Recent Medical Records
+                </h3>
+
+                <p>
+                    Your latest diagnoses and prescriptions
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="medical-record-list"
+            id="patientMedicalRecords"
+        >
+
+            <div class="patient-empty">
+
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                <p>
+                    Loading medical records...
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     BOOK APPOINTMENT MODAL
+========================================================= -->
+
+<div
+    id="bookingModal"
+    style="
+        display:none;
+        position:fixed;
+        inset:0;
+        background:rgba(15,23,42,.55);
+        z-index:9999;
+        align-items:center;
+        justify-content:center;
+        padding:20px;
+    "
+>
+
+    <div
+        style="
+            background:white;
+            width:min(520px,100%);
+            border-radius:18px;
+            padding:25px;
+            max-height:90vh;
+            overflow:auto;
+        "
+    >
+
+        <div
+            style="
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                margin-bottom:20px;
+            "
+        >
+
+            <div>
+
+                <h3 style="margin:0;">
+                    Book Appointment
+                </h3>
+
+                <p
+                    style="
+                        margin:5px 0 0;
+                        color:#64748b;
+                        font-size:12px;
+                    "
+                >
+                    Schedule a consultation
+                </p>
+
+            </div>
+
+
+            <button
+                onclick="closeBookingModal()"
+                style="
+                    border:0;
+                    background:#f1f5f9;
+                    width:35px;
+                    height:35px;
+                    border-radius:10px;
+                    cursor:pointer;
+                "
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <form
+            id="bookingForm"
+            onsubmit="bookAppointment(event)"
+        >
+
+
+            <label>
+                Department
+            </label>
+
+            <select
+                id="bookingDepartment"
+                required
+                onchange="loadDoctorsByDepartment()"
+                style="
+                    width:100%;
+                    padding:12px;
+                    margin:7px 0 15px;
+                    border:1px solid #dbe2ea;
+                    border-radius:10px;
+                "
+            >
+
+                <option value="">
+                    Select Department
+                </option>
+
+            </select>
+
+
+
+            <label>
+                Doctor
+            </label>
+
+            <select
+                id="bookingDoctor"
+                required
+                style="
+                    width:100%;
+                    padding:12px;
+                    margin:7px 0 15px;
+                    border:1px solid #dbe2ea;
+                    border-radius:10px;
+                "
+            >
+
+                <option value="">
+                    Select Doctor
+                </option>
+
+            </select>
+
+
+
+            <label>
+                Date
+            </label>
+
+            <input
+                type="date"
+                id="bookingDate"
+                required
+                style="
+                    width:100%;
+                    padding:12px;
+                    margin:7px 0 15px;
+                    border:1px solid #dbe2ea;
+                    border-radius:10px;
+                "
+            >
+
+
+
+            <label>
+                Time
+            </label>
+
+            <input
+                type="time"
+                id="bookingTime"
+                required
+                style="
+                    width:100%;
+                    padding:12px;
+                    margin:7px 0 15px;
+                    border:1px solid #dbe2ea;
+                    border-radius:10px;
+                "
+            >
+
+
+
+            <label>
+                Reason for Visit
+            </label>
+
+            <textarea
+                id="bookingReason"
+                required
+                rows="4"
+                placeholder="Describe the reason for your appointment..."
+                style="
+                    width:100%;
+                    padding:12px;
+                    margin:7px 0 20px;
+                    border:1px solid #dbe2ea;
+                    border-radius:10px;
+                    resize:vertical;
+                "
+            ></textarea>
+
+
+
+            <button
+                type="submit"
+                style="
+                    width:100%;
+                    padding:13px;
+                    border:0;
+                    border-radius:10px;
+                    background:#2563eb;
+                    color:white;
+                    font-weight:700;
+                    cursor:pointer;
+                "
+            >
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                Book Appointment
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="js/auth.js"></script>
+
+<script src="js/patient-dashboard.js"></script>
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const logoutButton =
+            document.getElementById(
+                "patientLogoutBtn"
+            );
+
+        if (!logoutButton) {
+            return;
+        }
+
+        logoutButton.addEventListener(
+            "click",
+            async function () {
+
+                const confirmed =
+                    confirm(
+                        "Are you sure you want to logout?"
+                    );
+
+                if (!confirmed) {
+                    return;
+                }
+
+                try {
+
+                    if (
+                        window.PulseCareAuth &&
+                        typeof
+                        window.PulseCareAuth.logout
+                        === "function"
+                    ) {
+
+                        await
+                            window.PulseCareAuth.logout();
+
+                    } else {
+
+                        window.location.replace(
+                            "login.html"
+                        );
+
+                    }
+
+                } catch (error) {
+
+                    console.error(
+                        "Patient logout error:",
+                        error
+                    );
+
+                    window.location.replace(
+                        "login.html"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+);
+
+</script>
+<script>
+
+/* =========================================================
+   PATIENT NOTIFICATION SYSTEM
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const notificationBtn =
+            document.getElementById(
+                "patientNotificationBtn"
+            );
+
+        const notificationPanel =
+            document.getElementById(
+                "patientNotificationPanel"
+            );
+
+        const notificationList =
+            document.getElementById(
+                "patientNotificationList"
+            );
+
+        const notificationBadge =
+            document.getElementById(
+                "patientNotificationBadge"
+            );
+
+        const notificationClose =
+            document.getElementById(
+                "patientNotificationClose"
+            );
+
+
+        /* =================================================
+           SAFETY CHECK
+        ================================================= */
+
+        if (
+            !notificationBtn ||
+            !notificationPanel ||
+            !notificationList
+        ) {
+
+            console.error(
+                "Patient notification elements not found."
+            );
+
+            return;
+
+        }
+
+
+        /* =================================================
+           ESCAPE HTML
+        ================================================= */
+
+        function escapeHTML(value) {
+
+            return String(value)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+
+        }
+
+
+        /* =================================================
+           FORMAT TIME
+        ================================================= */
+
+        function formatTime(value) {
+
+            if (!value) {
+                return "";
+            }
+
+            const date =
+                new Date(value);
+
+            if (
+                Number.isNaN(
+                    date.getTime()
+                )
+            ) {
+
+                return "";
+
+            }
+
+            return date.toLocaleString(
+                "en-IN",
+                {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit"
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           UPDATE BADGE
+        ================================================= */
+
+        function updateBadge(count) {
+
+            const unread =
+                Number(count) || 0;
+
+
+            if (unread > 0) {
+
+                notificationBadge.textContent =
+                    unread > 99
+                        ? "99+"
+                        : unread;
+
+                notificationBadge.style.display =
+                    "flex";
+
+            } else {
+
+                notificationBadge.style.display =
+                    "none";
+
+            }
+
+        }
+
+
+        /* =================================================
+           LOAD NOTIFICATIONS
+        ================================================= */
+
+        async function loadNotifications() {
+
+            try {
+
+                const response =
+                    await fetch(
+                        "/api/notifications",
+                        {
+                            method: "GET",
+                            credentials: "include",
+
+                            headers: {
+                                "Accept":
+                                    "application/json"
+                            }
+                        }
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        `HTTP ${response.status}`
+                    );
+
+                }
+
+
+                const data =
+                    await response.json();
+
+
+                console.log(
+                    "Patient notifications:",
+                    data
+                );
+
+
+                if (
+                    !data.success ||
+                    !Array.isArray(
+                        data.notifications
+                    )
+                ) {
+
+                    throw new Error(
+                        "Invalid notification response"
+                    );
+
+                }
+
+
+                /* -----------------------------------------
+                   BADGE
+                ----------------------------------------- */
+
+                updateBadge(
+                    data.unreadCount || 0
+                );
+
+
+                const notifications =
+                    data.notifications;
+
+
+                /* -----------------------------------------
+                   EMPTY
+                ----------------------------------------- */
+
+                if (
+                    notifications.length === 0
+                ) {
+
+                    notificationList.innerHTML = `
+
+                        <div
+                            class="patient-notification-empty"
+                        >
+
+                            <i
+                                class="fa-regular fa-bell-slash"
+                            ></i>
+
+                            <strong>
+                                No notifications
+                            </strong>
+
+                            <span>
+                                You're all caught up.
+                            </span>
+
+                        </div>
+
+                    `;
+
+                    return;
+
+                }
+
+
+                /* -----------------------------------------
+                   RENDER
+                ----------------------------------------- */
+
+                notificationList.innerHTML =
+                    notifications
+                        .map(
+                            function (notification) {
+
+                                const title =
+                                    notification.title ||
+                                    "Notification";
+
+                                const message =
+                                    notification.message ||
+                                    "";
+
+                                const time =
+                                    formatTime(
+                                        notification.created_at
+                                    );
+
+
+                                return `
+
+                                    <div
+                                        class="patient-notification-item"
+                                    >
+
+                                        <div
+                                            class="patient-notification-icon"
+                                        >
+
+                                            <i
+                                                class="fa-regular fa-bell"
+                                            ></i>
+
+                                        </div>
+
+
+                                        <div
+                                            class="patient-notification-content"
+                                        >
+
+                                            <div
+                                                class="patient-notification-title"
+                                            >
+                                                ${escapeHTML(title)}
+                                            </div>
+
+
+                                            <div
+                                                class="patient-notification-message"
+                                            >
+                                                ${escapeHTML(message)}
+                                            </div>
+
+
+                                            ${
+                                                time
+                                                    ? `
+                                                        <div
+                                                            class="patient-notification-time"
+                                                        >
+                                                            ${escapeHTML(time)}
+                                                        </div>
+                                                    `
+                                                    : ""
+                                            }
+
+                                        </div>
+
+                                    </div>
+
+                                `;
+
+                            }
+                        )
+                        .join("");
+
+
+            } catch (error) {
+
+                console.error(
+                    "Patient notification error:",
+                    error
+                );
+
+
+                notificationList.innerHTML = `
+
+                    <div
+                        class="patient-notification-error"
+                    >
+
+                        <i
+                            class="fa-solid fa-triangle-exclamation"
+                        ></i>
+
+                        Failed to load notifications.
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+
+        /* =================================================
+           OPEN / CLOSE
+        ================================================= */
+
+        function openNotifications() {
+
+            notificationPanel.style.display =
+                "block";
+
+            loadNotifications();
+
+        }
+
+
+        function closeNotifications() {
+
+            notificationPanel.style.display =
+                "none";
+
+        }
+
+
+        /* =================================================
+           BELL CLICK
+        ================================================= */
+
+        notificationBtn.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                event.stopPropagation();
+
+
+                const isOpen =
+                    notificationPanel.style.display ===
+                    "block";
+
+
+                if (isOpen) {
+
+                    closeNotifications();
+
+                } else {
+
+                    openNotifications();
+
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           CLOSE BUTTON
+        ================================================= */
+
+        notificationClose.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                event.stopPropagation();
+
+                closeNotifications();
+
+            }
+        );
+
+
+        /* =================================================
+           CLICK OUTSIDE
+        ================================================= */
+
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                const wrapper =
+                    document.getElementById(
+                        "patientNotificationWrapper"
+                    );
+
+
+                if (
+                    wrapper &&
+                    !wrapper.contains(
+                        event.target
+                    )
+                ) {
+
+                    closeNotifications();
+
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           INITIAL LOAD
+        ================================================= */
+
+        loadNotifications();
+
+
+        /* =================================================
+           AUTO REFRESH EVERY 30 SECONDS
+        ================================================= */
+
+        setInterval(
+            function () {
+
+                loadNotifications();
+
+            },
+            30000
+        );
+
+    }
+);
+
+</script>
+</body>
+
+</html>

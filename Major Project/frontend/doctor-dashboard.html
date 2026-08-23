@@ -1,0 +1,4954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="PulseCare Doctor Dashboard"
+    >
+
+    <meta
+        name="author"
+        content="G Yeshwanth Surya"
+    >
+
+    <title>Doctor Dashboard | PulseCare</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         PULSECARE CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         DOCTOR DASHBOARD CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           GLOBAL
+        ====================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Inter", Arial, sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+        }
+
+
+        /* =====================================================
+           SIDEBAR
+        ====================================================== */
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+
+            width: 270px;
+
+            background: #ffffff;
+
+            border-right: 1px solid #e5e7eb;
+
+            display: flex;
+            flex-direction: column;
+
+            z-index: 1000;
+
+            overflow-y: auto;
+        }
+
+
+        /* =====================================================
+           SIDEBAR LOGO
+        ====================================================== */
+
+        .sidebar-logo {
+            height: 90px;
+
+            padding: 20px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+
+            border-radius: 14px;
+
+            background: #0ea5e9;
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 23px;
+
+            box-shadow:
+                0 6px 15px rgba(14, 165, 233, 0.25);
+        }
+
+        .sidebar-logo h2 {
+            margin: 0;
+
+            font-size: 20px;
+
+            font-weight: 800;
+
+            color: #0f172a;
+        }
+
+        .sidebar-logo h2 span {
+            color: #0ea5e9;
+        }
+
+        .sidebar-logo p {
+            margin: 3px 0 0;
+
+            font-size: 9px;
+
+            letter-spacing: 1px;
+
+            color: #94a3b8;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =====================================================
+           SIDEBAR NAVIGATION
+        ====================================================== */
+
+        .sidebar-navigation {
+            padding: 22px 14px;
+        }
+
+        .menu-label {
+            margin: 0 10px 12px;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            color: #94a3b8;
+
+            letter-spacing: 1px;
+        }
+
+        .sidebar-link {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            width: 100%;
+
+            padding: 12px 14px;
+
+            margin-bottom: 5px;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            color: #475569;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .sidebar-link i {
+            width: 20px;
+
+            text-align: center;
+
+            font-size: 15px;
+        }
+
+        .sidebar-link:hover {
+            background: #eff6ff;
+
+            color: #2563eb;
+        }
+
+        .sidebar-link.active {
+            background: #eff6ff;
+
+            color: #2563eb;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           SIDEBAR BOTTOM
+        ====================================================== */
+
+        .sidebar-bottom {
+            margin-top: auto;
+
+            padding: 15px;
+
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .admin-mini-profile {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 8px;
+
+            margin-bottom: 10px;
+        }
+
+        .admin-avatar {
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+
+            background: #2563eb;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+        .admin-mini-profile strong {
+            display: block;
+
+            font-size: 12px;
+
+            color: #0f172a;
+        }
+
+        .admin-mini-profile span {
+            display: block;
+
+            margin-top: 2px;
+
+            font-size: 10px;
+
+            color: #64748b;
+        }
+
+        .sidebar-logout {
+            width: 100%;
+
+            border: none;
+
+            background: transparent;
+
+            color: #ef4444;
+
+            padding: 10px;
+
+            border-radius: 8px;
+
+            text-align: left;
+
+            cursor: pointer;
+
+            font-size: 13px;
+        }
+
+        .sidebar-logout:hover {
+            background: #fef2f2;
+        }
+
+
+        /* =====================================================
+           MAIN CONTENT
+        ====================================================== */
+
+        .main-content {
+            margin-left: 270px;
+
+            min-height: 100vh;
+
+            width: calc(100% - 270px);
+        }
+
+
+        /* =====================================================
+           TOP NAVBAR
+        ====================================================== */
+
+        .top-navbar {
+            height: 80px;
+
+            padding: 0 30px;
+
+            background: #ffffff;
+
+            border-bottom: 1px solid #e5e7eb;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 900;
+        }
+
+        .top-navbar-title h1 {
+            margin: 0;
+
+            font-size: 22px;
+
+            font-weight: 700;
+
+            color: #0f172a;
+        }
+
+        .top-navbar-title p {
+            margin: 4px 0 0;
+
+            font-size: 12px;
+
+            color: #64748b;
+        }
+
+
+        /* =====================================================
+           NAVBAR ACTIONS
+        ====================================================== */
+
+        .top-navbar-actions {
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+        }
+
+        .icon-button {
+            width: 42px;
+            height: 42px;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 10px;
+
+            background: white;
+
+            color: #475569;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 16px;
+        }
+
+        .icon-button:hover {
+            background: #f8fafc;
+
+            color: #2563eb;
+        }
+
+        .user-profile {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+
+            background: #2563eb;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+        .user-info strong {
+            display: block;
+
+            font-size: 12px;
+
+            color: #0f172a;
+        }
+
+        .user-info span {
+            display: block;
+
+            margin-top: 2px;
+
+            font-size: 10px;
+
+            color: #64748b;
+        }
+
+
+        /* =====================================================
+           CONTENT
+        ====================================================== */
+
+        .content-wrapper {
+            padding: 28px 30px 50px;
+        }
+
+        .doctor-dashboard-content {
+            max-width: 1600px;
+
+            margin: 0 auto;
+
+            padding-bottom: 40px;
+        }
+
+
+        /* =====================================================
+           MOBILE MENU
+        ====================================================== */
+
+        .mobile-menu-btn {
+            display: none;
+
+            border: none;
+
+            background: transparent;
+
+            font-size: 20px;
+
+            color: #334155;
+
+            cursor: pointer;
+        }
+
+        .sidebar-overlay {
+            display: none;
+        }
+
+
+        /* =====================================================
+           WELCOME CARD
+        ====================================================== */
+
+        .doctor-welcome-card {
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #1d4ed8
+                );
+
+            border-radius: 18px;
+
+            padding: 28px;
+
+            color: white;
+
+            margin-bottom: 24px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .doctor-welcome-info {
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+        }
+
+        .doctor-large-avatar {
+            width: 72px;
+            height: 72px;
+
+            border-radius: 18px;
+
+            background: rgba(255,255,255,0.18);
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 25px;
+
+            font-weight: 800;
+
+            border: 2px solid rgba(255,255,255,0.25);
+        }
+
+        .doctor-welcome-info h2 {
+            margin: 0 0 5px;
+
+            font-size: 24px;
+        }
+
+        .doctor-welcome-info p {
+            margin: 0;
+
+            opacity: 0.85;
+
+            font-size: 14px;
+        }
+
+        .doctor-specialization {
+            margin-top: 8px;
+
+            font-size: 13px;
+
+            opacity: 0.9;
+        }
+
+
+        /* =====================================================
+           STATISTICS
+        ====================================================== */
+
+        .doctor-stats-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+
+            margin-bottom: 24px;
+        }
+
+        .doctor-stat-card {
+            background: white;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 16px;
+
+            padding: 20px;
+
+            box-shadow:
+                0 5px 20px rgba(15,23,42,0.05);
+        }
+
+        .doctor-stat-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 18px;
+        }
+
+        .doctor-stat-icon {
+            width: 45px;
+            height: 45px;
+
+            border-radius: 12px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #eff6ff;
+
+            color: #2563eb;
+
+            font-size: 18px;
+        }
+
+        .doctor-stat-card:nth-child(2)
+        .doctor-stat-icon {
+            background: #ecfdf5;
+
+            color: #059669;
+        }
+
+        .doctor-stat-card:nth-child(3)
+        .doctor-stat-icon {
+            background: #fef3c7;
+
+            color: #d97706;
+        }
+
+        .doctor-stat-card:nth-child(4)
+        .doctor-stat-icon {
+            background: #f3e8ff;
+
+            color: #9333ea;
+        }
+
+        .doctor-stat-card p {
+            margin: 0 0 7px;
+
+            color: #64748b;
+
+            font-size: 13px;
+        }
+
+        .doctor-stat-card h3 {
+            margin: 0;
+
+            font-size: 28px;
+
+            color: #0f172a;
+        }
+
+
+        /* =====================================================
+           MAIN GRID
+        ====================================================== */
+
+        .doctor-main-grid {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 2fr)
+                minmax(300px, 1fr);
+
+            gap: 22px;
+
+            margin-bottom: 24px;
+        }
+
+
+        /* =====================================================
+           CARD
+        ====================================================== */
+
+        .doctor-card {
+            background: white;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 16px;
+
+            padding: 22px;
+
+            box-shadow:
+                0 5px 20px rgba(15,23,42,0.05);
+        }
+
+        .doctor-card-header {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 20px;
+        }
+
+        .doctor-card-header h3 {
+            margin: 0;
+
+            color: #0f172a;
+
+            font-size: 17px;
+        }
+
+        .doctor-card-header p {
+            margin: 5px 0 0;
+
+            color: #64748b;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           APPOINTMENTS
+        ====================================================== */
+
+        .doctor-appointment-list {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+        .doctor-appointment-item {
+            border: 1px solid #e5e7eb;
+
+            border-radius: 12px;
+
+            padding: 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+        }
+
+        .doctor-patient-info {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            min-width: 0;
+        }
+
+        .patient-avatar {
+            width: 42px;
+            height: 42px;
+
+            flex: 0 0 42px;
+
+            border-radius: 12px;
+
+            background: #eff6ff;
+
+            color: #2563eb;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-weight: 700;
+
+            font-size: 13px;
+        }
+
+        .doctor-patient-info strong {
+            display: block;
+
+            color: #0f172a;
+
+            font-size: 14px;
+        }
+
+        .doctor-patient-info span {
+            display: block;
+
+            margin-top: 3px;
+
+            color: #64748b;
+
+            font-size: 12px;
+        }
+
+        .appointment-meta {
+            text-align: right;
+
+            min-width: 150px;
+        }
+
+        .appointment-meta strong {
+            display: block;
+
+            color: #334155;
+
+            font-size: 13px;
+        }
+
+        .appointment-meta > span:not(.status-badge) {
+            display: block;
+
+            margin-top: 3px;
+
+            color: #64748b;
+
+            font-size: 12px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+
+            padding: 5px 9px;
+
+            border-radius: 20px;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            margin-top: 7px;
+        }
+
+        .status-pending {
+            background: #fef3c7;
+
+            color: #92400e;
+        }
+
+        .status-confirmed {
+            background: #dcfce7;
+
+            color: #166534;
+        }
+
+        .status-completed {
+            background: #dbeafe;
+
+            color: #1e40af;
+        }
+
+        .status-cancelled {
+            background: #fee2e2;
+
+            color: #991b1b;
+        }
+
+
+        /* =====================================================
+           APPOINTMENT ACTION BUTTONS
+        ====================================================== */
+
+        .appointment-actions {
+            display: flex;
+
+            gap: 7px;
+
+            margin-top: 10px;
+
+            justify-content: flex-end;
+
+            flex-wrap: wrap;
+        }
+
+        .appointment-action-btn {
+            border: none;
+
+            border-radius: 7px;
+
+            padding: 7px 10px;
+
+            font-family:
+                "Inter",
+                Arial,
+                sans-serif;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 5px;
+
+            transition:
+                transform 0.15s ease,
+                opacity 0.15s ease;
+        }
+
+        .appointment-action-btn:hover {
+            transform: translateY(-1px);
+
+            opacity: 0.9;
+        }
+
+        .appointment-action-btn:active {
+            transform: translateY(0);
+        }
+
+        .confirm-btn {
+            background: #dcfce7;
+
+            color: #166534;
+        }
+
+        .complete-btn {
+            background: #dbeafe;
+
+            color: #1e40af;
+        }
+
+        .cancel-btn {
+            background: #fee2e2;
+
+            color: #991b1b;
+        }
+
+
+        /* =====================================================
+           PROFILE DETAILS
+        ====================================================== */
+
+        .profile-details {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 14px;
+        }
+
+        .profile-detail {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            padding-bottom: 12px;
+
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .profile-detail:last-child {
+            border-bottom: none;
+        }
+
+        .profile-detail span:first-child {
+            color: #64748b;
+
+            font-size: 12px;
+        }
+
+        .profile-detail span:last-child {
+            color: #334155;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            text-align: right;
+
+            word-break: break-word;
+        }
+
+
+        /* =====================================================
+           PATIENTS
+        ====================================================== */
+
+        .doctor-patient-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+        }
+
+        .doctor-patient-card {
+            border: 1px solid #e5e7eb;
+
+            border-radius: 12px;
+
+            padding: 14px;
+
+            background: #ffffff;
+        }
+
+        .doctor-patient-card strong {
+            display: block;
+
+            color: #0f172a;
+
+            font-size: 13px;
+        }
+
+        .doctor-patient-card span {
+            display: block;
+
+            margin-top: 4px;
+
+            color: #64748b;
+
+            font-size: 11px;
+        }
+
+
+        /* =====================================================
+           LOADING / EMPTY
+        ====================================================== */
+
+        .doctor-loading {
+            padding: 35px;
+
+            text-align: center;
+
+            color: #64748b;
+
+            font-size: 13px;
+        }
+
+        .doctor-empty {
+            padding: 30px;
+
+            text-align: center;
+
+            color: #94a3b8;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           ERROR
+        ====================================================== */
+
+        .doctor-error {
+            padding: 14px;
+
+            margin-bottom: 20px;
+
+            border-radius: 10px;
+
+            background: #fef2f2;
+
+            color: #b91c1c;
+
+            font-size: 13px;
+
+            display: none;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ====================================================== */
+
+        @media (max-width: 1100px) {
+
+            .doctor-stats-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 1000px) {
+
+            .sidebar {
+                width: 230px;
+            }
+
+            .main-content {
+                margin-left: 230px;
+
+                width: calc(100% - 230px);
+            }
+
+            .content-wrapper {
+                padding: 22px;
+            }
+
+        }
+
+
+        /* =====================================================
+           SMALL TABLET
+        ====================================================== */
+
+        @media (max-width: 850px) {
+
+            .doctor-main-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 768px) {
+
+            .sidebar {
+                transform: translateX(-100%);
+
+                transition:
+                    transform 0.25s ease;
+
+                width: 270px;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .sidebar-overlay {
+                position: fixed;
+
+                inset: 0;
+
+                background:
+                    rgba(
+                        15,
+                        23,
+                        42,
+                        0.45
+                    );
+
+                z-index: 999;
+            }
+
+            .sidebar-overlay.active {
+                display: block;
+            }
+
+            .main-content {
+                margin-left: 0;
+
+                width: 100%;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .top-navbar {
+                padding: 0 18px;
+
+                gap: 15px;
+            }
+
+            .top-navbar-title {
+                flex: 1;
+            }
+
+            .top-navbar-title h1 {
+                font-size: 18px;
+            }
+
+            .user-info {
+                display: none;
+            }
+
+            .content-wrapper {
+                padding: 18px;
+            }
+
+            .doctor-welcome-card {
+                align-items: flex-start;
+
+                flex-direction: column;
+            }
+
+            .doctor-appointment-item {
+                align-items: flex-start;
+
+                flex-direction: column;
+            }
+
+            .appointment-meta {
+                width: 100%;
+
+                text-align: left;
+
+                min-width: 0;
+            }
+
+            .appointment-actions {
+                justify-content: flex-start;
+            }
+
+        }
+
+
+        /* =====================================================
+           SMALL MOBILE
+        ====================================================== */
+
+        @media (max-width: 600px) {
+
+            .doctor-stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .doctor-welcome-info {
+                align-items: flex-start;
+
+                gap: 12px;
+            }
+
+            .doctor-large-avatar {
+                width: 58px;
+                height: 58px;
+            }
+
+            .doctor-welcome-info h2 {
+                font-size: 19px;
+            }
+
+            .top-navbar-actions {
+                gap: 8px;
+            }
+
+            .doctor-patient-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .doctor-card {
+                padding: 18px;
+            }
+
+        }
+    
+
+    /* =====================================================
+   APPOINTMENT ACTIONS
+===================================================== */
+
+.appointment-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+
+.appointment-action-btn {
+    border: 0;
+    border-radius: 9px;
+    padding: 9px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+
+.appointment-action-btn:hover {
+    transform: translateY(-1px);
+}
+
+
+.confirm-btn {
+    background: #dcfce7;
+    color: #166534;
+}
+
+
+.cancel-btn {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+
+.complete-btn {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+
+.appointment-completed-text {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #166534;
+}
+
+
+.appointment-cancelled-text {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #991b1b;
+}
+
+
+/* =====================================================
+   CONSULTATION MODAL
+===================================================== */
+
+.consultation-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    background: rgba(15, 23, 42, 0.55);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+
+    transition: opacity 0.2s ease;
+}
+
+
+.consultation-modal-overlay.visible {
+    opacity: 1;
+}
+
+
+.consultation-modal {
+    width: min(
+        680px,
+        100%
+    );
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 60px
+        rgba(0, 0, 0, 0.18);
+
+    transform: translateY(20px);
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.consultation-modal-overlay.visible
+.consultation-modal {
+
+    transform:
+        translateY(0);
+}
+
+
+/* HEADER */
+
+.consultation-modal-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    padding: 24px 26px;
+
+    border-bottom:
+        1px solid #e5e7eb;
+}
+
+
+.consultation-label {
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color: #2563eb;
+}
+
+
+.consultation-modal-header h2 {
+
+    margin:
+        5px 0 4px;
+
+    font-size: 23px;
+
+    color: #111827;
+}
+
+
+.consultation-modal-header p {
+
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #64748b;
+}
+
+
+.consultation-close {
+
+    width: 36px;
+    height: 36px;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    background: #f1f5f9;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+
+/* FORM */
+
+#consultationForm {
+
+    padding: 26px;
+}
+
+
+.consultation-field {
+
+    margin-bottom: 20px;
+}
+
+
+.consultation-field label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #334155;
+}
+
+
+.consultation-field label span {
+
+    color: #dc2626;
+}
+
+
+.consultation-field textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    resize: vertical;
+
+    min-height: 90px;
+
+    border:
+        1px solid #dbe2ea;
+
+    border-radius: 11px;
+
+    padding: 12px 14px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.consultation-field textarea:focus {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.10);
+}
+
+
+/* FOOTER */
+
+.consultation-modal-footer {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding-top: 5px;
+}
+
+
+.consultation-cancel-btn,
+.consultation-save-btn {
+
+    border: 0;
+
+    border-radius: 10px;
+
+    padding: 12px 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.consultation-cancel-btn {
+
+    background: #f1f5f9;
+
+    color: #334155;
+}
+
+
+.consultation-save-btn {
+
+    background: #2563eb;
+
+    color: white;
+}
+
+
+.consultation-save-btn:disabled {
+
+    opacity: 0.65;
+
+    cursor: not-allowed;
+}
+
+
+@media (max-width: 600px) {
+
+    .consultation-modal-header {
+
+        padding: 20px;
+    }
+
+
+    #consultationForm {
+
+        padding: 20px;
+    }
+
+
+    .consultation-modal-footer {
+
+        flex-direction: column;
+    }
+
+
+    .consultation-cancel-btn,
+    .consultation-save-btn {
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+}    
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SIDEBAR OVERLAY
+====================================================== -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+<!-- =====================================================
+     SIDEBAR
+====================================================== -->
+
+<aside
+    class="sidebar"
+    id="sidebar"
+>
+
+
+    <!-- LOGO -->
+
+    <div class="sidebar-logo">
+
+        <div class="logo-icon">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+        </div>
+
+        <div>
+
+            <h2>
+                Pulse<span>Care</span>
+            </h2>
+
+            <p>
+                Healthcare Management
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="sidebar-navigation">
+
+        <p class="menu-label">
+            DOCTOR MENU
+        </p>
+
+
+        <a
+            href="doctor-dashboard.html"
+            class="sidebar-link active"
+        >
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <a
+            href="#appointments"
+            class="sidebar-link"
+            id="appointmentsNav"
+        >
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            <span>
+                Appointments
+            </span>
+
+        </a>
+
+
+        <a
+            href="#patients"
+            class="sidebar-link"
+            id="patientsNav"
+        >
+
+            <i class="fa-solid fa-users"></i>
+
+            <span>
+                My Patients
+            </span>
+
+        </a>
+
+
+        <a
+            href="#profile"
+            class="sidebar-link"
+            id="profileNav"
+        >
+
+            <i class="fa-solid fa-user-doctor"></i>
+
+            <span>
+                My Profile
+            </span>
+
+        </a>
+
+    </nav>
+
+
+    <!-- SIDEBAR BOTTOM -->
+
+    <div class="sidebar-bottom">
+
+        <div class="admin-mini-profile">
+
+            <div
+                class="admin-avatar"
+                id="sidebarDoctorAvatar"
+            >
+                DR
+            </div>
+
+            <div>
+
+                <strong id="sidebarDoctorName">
+                    Doctor
+                </strong>
+
+                <span>
+                    Doctor
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="sidebar-logout"
+            id="logoutBtn"
+        >
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+====================================================== -->
+
+<main class="main-content">
+
+
+    <!-- TOP NAVBAR -->
+
+    <header class="top-navbar">
+
+        <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            aria-label="Open navigation menu"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <div class="top-navbar-title">
+
+            <h1>
+                Doctor Dashboard
+            </h1>
+
+            <p>
+                Welcome back, Doctor 👋
+            </p>
+
+        </div>
+
+
+        <div class="top-navbar-actions">
+
+<div class="notification-wrapper">
+
+    <button
+        class="icon-button"
+        id="notificationBtn"
+        aria-label="Notifications"
+        title="Notifications"
+        type="button"
+    >
+
+        <i class="fa-regular fa-bell"></i>
+
+        <span
+            id="notificationBadge"
+            class="notification-badge"
+            style="display:none;"
+        >
+            0
+        </span>
+
+    </button>
+
+
+    <!-- ============================================= -->
+    <!-- NOTIFICATION PANEL                            -->
+    <!-- ============================================= -->
+
+    <div
+        id="doctorNotificationPanel"
+        class="doctor-notification-panel"
+        style="display:none;"
+    >
+
+        <div class="doctor-notification-header">
+
+            <div>
+
+                <strong>
+                    Notifications
+                </strong>
+
+                <span id="notificationSubtitle">
+                    Your latest updates
+                </span>
+
+            </div>
+
+            <button
+                type="button"
+                id="closeNotificationBtn"
+                class="notification-close-btn"
+                aria-label="Close notifications"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div
+            id="doctorNotificationList"
+            class="doctor-notification-list"
+        >
+
+            <div class="notification-loading">
+
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                <span>
+                    Loading notifications...
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+            <div class="user-profile">
+
+                <div
+                    class="user-avatar"
+                    id="topDoctorAvatar"
+                >
+                    DR
+                </div>
+
+                <div class="user-info">
+
+                    <strong id="topDoctorName">
+                        Doctor
+                    </strong>
+
+                    <span>
+                        Doctor
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTENT
+    ====================================================== -->
+
+    <div
+        class="content-wrapper doctor-dashboard-content"
+    >
+
+
+        <!-- ERROR -->
+
+        <div
+            class="doctor-error"
+            id="doctorError"
+        ></div>
+
+
+        <!-- =================================================
+             WELCOME
+        ================================================== -->
+
+        <section class="doctor-welcome-card">
+
+            <div class="doctor-welcome-info">
+
+                <div
+                    class="doctor-large-avatar"
+                    id="doctorAvatar"
+                >
+                    DR
+                </div>
+
+
+                <div>
+
+                    <h2 id="welcomeDoctorName">
+                        Welcome, Doctor
+                    </h2>
+
+                    <p id="welcomeDoctorDepartment">
+                        Healthcare Professional
+                    </p>
+
+                    <div
+                        class="doctor-specialization"
+                        id="welcomeDoctorSpecialization"
+                    >
+                        Loading profile...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================== -->
+
+        <section class="doctor-stats-grid">
+
+
+            <div class="doctor-stat-card">
+
+                <div class="doctor-stat-top">
+
+                    <div class="doctor-stat-icon">
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                    </div>
+
+                </div>
+
+                <p>
+                    Total Appointments
+                </p>
+
+                <h3 id="doctorTotalAppointments">
+                    0
+                </h3>
+
+            </div>
+
+
+            <div class="doctor-stat-card">
+
+                <div class="doctor-stat-top">
+
+                    <div class="doctor-stat-icon">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+                </div>
+
+                <p>
+                    My Patients
+                </p>
+
+                <h3 id="doctorTotalPatients">
+                    0
+                </h3>
+
+            </div>
+
+
+            <div class="doctor-stat-card">
+
+                <div class="doctor-stat-top">
+
+                    <div class="doctor-stat-icon">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                    </div>
+
+                </div>
+
+                <p>
+                    Pending
+                </p>
+
+                <h3 id="doctorPendingAppointments">
+                    0
+                </h3>
+
+            </div>
+
+
+            <div class="doctor-stat-card">
+
+                <div class="doctor-stat-top">
+
+                    <div class="doctor-stat-icon">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                    </div>
+
+                </div>
+
+                <p>
+                    Completed
+                </p>
+
+                <h3 id="doctorCompletedAppointments">
+                    0
+                </h3>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             APPOINTMENTS + PROFILE
+        ================================================== -->
+
+        <section class="doctor-main-grid">
+
+
+            <!-- APPOINTMENTS -->
+
+            <div
+                class="doctor-card"
+                id="appointments"
+            >
+
+                <div class="doctor-card-header">
+
+                    <div>
+
+                        <h3>
+                            My Appointments
+                        </h3>
+
+                        <p>
+                            Your scheduled consultations
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="doctor-appointment-list"
+                    id="doctorAppointments"
+                >
+
+                    <div class="doctor-loading">
+                        Loading appointments...
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE -->
+
+            <div
+                class="doctor-card"
+                id="profile"
+            >
+
+                <div class="doctor-card-header">
+
+                    <div>
+
+                        <h3>
+                            My Profile
+                        </h3>
+
+                        <p>
+                            Professional information
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="profile-details"
+                    id="doctorProfile"
+                >
+
+                    <div class="doctor-loading">
+                        Loading profile...
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             PATIENTS
+        ================================================== -->
+
+        <section
+            class="doctor-card"
+            id="patients"
+        >
+
+            <div class="doctor-card-header">
+
+                <div>
+
+                    <h3>
+                        My Patients
+                    </h3>
+
+                    <p>
+                        Patients associated with your appointments
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="doctor-patient-grid"
+                id="doctorPatients"
+            >
+
+                <div class="doctor-loading">
+                    Loading patients...
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+</main>
+
+
+<!-- =====================================================
+     AUTHENTICATION
+====================================================== -->
+
+<script src="js/auth.js"></script>
+
+
+<!-- =====================================================
+     DOCTOR DASHBOARD JAVASCRIPT
+====================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        loadDoctorDashboard();
+
+    }
+);
+
+
+// =========================================================
+// INITIAL DASHBOARD LOAD
+// =========================================================
+
+async function loadDoctorDashboard() {
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/doctor/dashboard",
+                {
+                    credentials: "include"
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok || !data.success) {
+
+            throw new Error(
+                data.message ||
+                "Unable to load doctor dashboard"
+            );
+
+        }
+
+
+        const doctor =
+            data.doctor || {};
+
+        const statistics =
+            data.statistics || {};
+
+
+        // -------------------------------------------------
+        // DOCTOR NAME
+        // -------------------------------------------------
+
+        setText(
+            "welcomeDoctorName",
+            `Welcome, ${doctor.name || "Doctor"}`
+        );
+
+        setText(
+            "topDoctorName",
+            doctor.name || "Doctor"
+        );
+
+        setText(
+            "sidebarDoctorName",
+            doctor.name || "Doctor"
+        );
+
+
+        // -------------------------------------------------
+        // DEPARTMENT
+        // -------------------------------------------------
+
+        setText(
+            "welcomeDoctorDepartment",
+            doctor.department ||
+            "Healthcare Professional"
+        );
+
+
+        // -------------------------------------------------
+        // SPECIALIZATION
+        // -------------------------------------------------
+
+        setText(
+            "welcomeDoctorSpecialization",
+            doctor.specialization ||
+            "Medical Specialist"
+        );
+
+
+        // -------------------------------------------------
+        // AVATAR
+        // -------------------------------------------------
+
+        const initials =
+            getInitials(
+                doctor.name
+            );
+
+        setText(
+            "doctorAvatar",
+            initials
+        );
+
+        setText(
+            "topDoctorAvatar",
+            initials
+        );
+
+        setText(
+            "sidebarDoctorAvatar",
+            initials
+        );
+
+
+        // -------------------------------------------------
+        // STATISTICS
+        // -------------------------------------------------
+
+        setText(
+            "doctorTotalAppointments",
+            statistics.totalAppointments || 0
+        );
+
+        setText(
+            "doctorTotalPatients",
+            statistics.totalPatients || 0
+        );
+
+        setText(
+            "doctorPendingAppointments",
+            statistics.pendingAppointments || 0
+        );
+
+        setText(
+            "doctorCompletedAppointments",
+            statistics.completedAppointments || 0
+        );
+
+
+        // -------------------------------------------------
+        // LOAD OTHER DATA
+        // -------------------------------------------------
+
+        await Promise.allSettled([
+            loadDoctorProfile(),
+            loadDoctorAppointments(),
+            loadDoctorPatients()
+        ]);
+
+
+        console.log(
+            "✅ Doctor dashboard loaded"
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Doctor dashboard error:",
+            error
+        );
+
+        showError(
+            error.message
+        );
+
+    }
+
+}
+
+
+// =========================================================
+// PROFILE
+// =========================================================
+
+async function loadDoctorProfile() {
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/doctor/profile",
+                {
+                    credentials: "include"
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok || !data.success) {
+
+            throw new Error(
+                data.message ||
+                "Failed to load profile"
+            );
+
+        }
+
+
+        const doctor =
+            data.doctor || {};
+
+
+        const container =
+            document.getElementById(
+                "doctorProfile"
+            );
+
+
+        if (!container) {
+            return;
+        }
+
+
+        container.innerHTML = `
+
+            <div class="profile-detail">
+
+                <span>Name</span>
+
+                <span>
+                    ${escapeHTML(
+                        doctor.name ||
+                        "Not provided"
+                    )}
+                </span>
+
+            </div>
+
+
+            <div class="profile-detail">
+
+                <span>Email</span>
+
+                <span>
+                    ${escapeHTML(
+                        doctor.email ||
+                        "Not provided"
+                    )}
+                </span>
+
+            </div>
+
+
+            <div class="profile-detail">
+
+                <span>Phone</span>
+
+                <span>
+                    ${escapeHTML(
+                        doctor.phone ||
+                        "Not provided"
+                    )}
+                </span>
+
+            </div>
+
+
+            <div class="profile-detail">
+
+                <span>Department</span>
+
+                <span>
+                    ${escapeHTML(
+                        doctor.department ||
+                        "Not assigned"
+                    )}
+                </span>
+
+            </div>
+
+
+            <div class="profile-detail">
+
+                <span>Specialization</span>
+
+                <span>
+                    ${escapeHTML(
+                        doctor.specialization ||
+                        "Not provided"
+                    )}
+                </span>
+
+            </div>
+
+
+            <div class="profile-detail">
+
+                <span>Qualification</span>
+
+                <span>
+                    ${escapeHTML(
+                        doctor.qualification ||
+                        "Not provided"
+                    )}
+                </span>
+
+            </div>
+
+
+            <div class="profile-detail">
+
+                <span>Experience</span>
+
+                <span>
+                    ${doctor.experience || 0} years
+                </span>
+
+            </div>
+
+        `;
+
+    } catch (error) {
+
+        console.error(
+            "Doctor profile error:",
+            error
+        );
+
+    }
+
+}
+
+
+// =========================================================
+// APPOINTMENTS
+// =========================================================
+
+async function loadDoctorAppointments() {
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/doctor/appointments",
+                {
+                    credentials: "include"
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok || !data.success) {
+
+            throw new Error(
+                data.message ||
+                "Failed to load appointments"
+            );
+
+        }
+
+
+        const appointments =
+            data.appointments || [];
+
+
+        const container =
+            document.getElementById(
+                "doctorAppointments"
+            );
+
+
+        if (!container) {
+            return;
+        }
+
+
+        if (appointments.length === 0) {
+
+            container.innerHTML = `
+
+                <div class="doctor-empty">
+
+                    <i class="fa-regular fa-calendar"></i>
+
+                    <br><br>
+
+                    No appointments found.
+
+                </div>
+
+            `;
+
+            return;
+        }
+
+
+        container.innerHTML =
+            appointments
+                .slice(0, 8)
+                .map(
+                    appointment =>
+                        createAppointmentHTML(
+                            appointment
+                        )
+                )
+                .join("");
+
+    } catch (error) {
+
+        console.error(
+            "Doctor appointments error:",
+            error
+        );
+
+
+        const container =
+            document.getElementById(
+                "doctorAppointments"
+            );
+
+
+        if (container) {
+
+            container.innerHTML = `
+
+                <div class="doctor-empty">
+
+                    Unable to load appointments.
+
+                </div>
+
+            `;
+
+        }
+
+    }
+
+}
+
+
+// =========================================================
+// APPOINTMENT HTML
+// =========================================================
+
+function createAppointmentHTML(
+    appointment
+) {
+
+    const patientName =
+        appointment.patient_name ||
+        "Patient";
+
+
+    const initials =
+        getInitials(
+            patientName
+        );
+
+
+    const status =
+        appointment.status ||
+        "Pending";
+
+
+    const statusClass =
+        status
+            .toLowerCase()
+            .replace(/\s+/g, "-");
+
+
+    let actionButtons = "";
+
+
+    // =====================================================
+    // PENDING
+    // =====================================================
+
+    if (status === "Pending") {
+
+        actionButtons = `
+
+            <div class="appointment-actions">
+
+                <button
+                    class="appointment-action-btn confirm-btn"
+                    onclick="updateAppointmentStatus(
+                        ${appointment.id},
+                        'Confirmed'
+                    )"
+                >
+                    <i class="fa-solid fa-check"></i>
+                    Confirm
+                </button>
+
+
+                <button
+                    class="appointment-action-btn cancel-btn"
+                    onclick="updateAppointmentStatus(
+                        ${appointment.id},
+                        'Cancelled'
+                    )"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                    Cancel
+                </button>
+
+            </div>
+
+        `;
+    }
+
+
+    // =====================================================
+    // CONFIRMED
+    // =====================================================
+
+    else if (status === "Confirmed") {
+
+        actionButtons = `
+
+            <div class="appointment-actions">
+
+                <button
+                    class="appointment-action-btn complete-btn"
+                    onclick="openConsultationModal(
+                        ${appointment.id},
+                        ${appointment.patient_id},
+                        '${escapeJS(patientName)}'
+                    )"
+                >
+                    <i class="fa-solid fa-stethoscope"></i>
+                    Complete Consultation
+                </button>
+
+            </div>
+
+        `;
+    }
+
+
+    // =====================================================
+    // COMPLETED
+    // =====================================================
+
+    else if (status === "Completed") {
+
+        actionButtons = `
+
+            <div class="appointment-completed-text">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Consultation Completed
+
+            </div>
+
+        `;
+    }
+
+
+    // =====================================================
+    // CANCELLED
+    // =====================================================
+
+    else if (status === "Cancelled") {
+
+        actionButtons = `
+
+            <div class="appointment-cancelled-text">
+
+                <i class="fa-solid fa-ban"></i>
+
+                Appointment Cancelled
+
+            </div>
+
+        `;
+    }
+
+
+    return `
+
+        <div class="doctor-appointment-item">
+
+
+            <!-- =========================================
+                 PATIENT
+            ========================================== -->
+
+            <div class="doctor-patient-info">
+
+                <div class="patient-avatar">
+
+                    ${escapeHTML(
+                        initials
+                    )}
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+
+                        ${escapeHTML(
+                            patientName
+                        )}
+
+                    </strong>
+
+
+                    <span>
+
+                        ${escapeHTML(
+                            appointment.reason ||
+                            "Consultation"
+                        )}
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================================
+                 APPOINTMENT META
+            ========================================== -->
+
+            <div class="appointment-meta">
+
+                <strong>
+
+                    ${formatDate(
+                        appointment.appointment_date
+                    )}
+
+                </strong>
+
+
+                <span>
+
+                    ${escapeHTML(
+                        appointment.appointment_time ||
+                        ""
+                    )}
+
+                </span>
+
+
+                <span
+                    class="status-badge status-${escapeHTML(
+                        statusClass
+                    )}"
+                >
+
+                    ${escapeHTML(
+                        status
+                    )}
+
+                </span>
+
+            </div>
+
+
+            <!-- =========================================
+                 ACTIONS
+            ========================================== -->
+
+            ${actionButtons}
+
+        </div>
+
+    `;
+}
+
+
+// =========================================================
+// UPDATE APPOINTMENT STATUS
+// =========================================================
+
+async function updateAppointmentStatus(
+    appointmentId,
+    newStatus
+) {
+
+    let confirmationMessage =
+        "Update this appointment?";
+
+
+    if (newStatus === "Confirmed") {
+
+        confirmationMessage =
+            "Confirm this appointment?";
+
+    }
+
+
+    else if (newStatus === "Completed") {
+
+        confirmationMessage =
+            "Mark this appointment as completed?";
+
+    }
+
+
+    else if (newStatus === "Cancelled") {
+
+        confirmationMessage =
+            "Cancel this appointment?";
+
+    }
+
+
+    const confirmed =
+        confirm(
+            confirmationMessage
+        );
+
+
+    if (!confirmed) {
+        return;
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                `/api/doctor/appointments/${appointmentId}/status`,
+                {
+                    method: "PATCH",
+
+                    credentials: "include",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        status: newStatus
+                    })
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok || !data.success) {
+
+            throw new Error(
+                data.message ||
+                "Failed to update appointment"
+            );
+
+        }
+
+
+        alert(
+            data.message ||
+            "Appointment updated successfully"
+        );
+
+
+        // Refresh dashboard
+
+        await loadDoctorDashboard();
+
+    } catch (error) {
+
+        console.error(
+            "Appointment status update error:",
+            error
+        );
+
+
+        alert(
+            error.message ||
+            "Failed to update appointment"
+        );
+
+    }
+
+}
+
+
+// =========================================================
+// PATIENTS
+// =========================================================
+
+async function loadDoctorPatients() {
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/doctor/patients",
+                {
+                    credentials: "include"
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok || !data.success) {
+
+            throw new Error(
+                data.message ||
+                "Failed to load patients"
+            );
+
+        }
+
+
+        const patients =
+            data.patients || [];
+
+
+        const container =
+            document.getElementById(
+                "doctorPatients"
+            );
+
+
+        if (!container) {
+            return;
+        }
+
+
+        if (patients.length === 0) {
+
+            container.innerHTML = `
+
+                <div class="doctor-empty">
+
+                    No patients found yet.
+
+                </div>
+
+            `;
+
+            return;
+        }
+
+
+        container.innerHTML =
+            patients
+                .slice(0, 10)
+                .map(
+                    patient =>
+                        createPatientHTML(
+                            patient
+                        )
+                )
+                .join("");
+
+    } catch (error) {
+
+        console.error(
+            "Doctor patients error:",
+            error
+        );
+
+
+        const container =
+            document.getElementById(
+                "doctorPatients"
+            );
+
+
+        if (container) {
+
+            container.innerHTML = `
+
+                <div class="doctor-empty">
+
+                    Unable to load patients.
+
+                </div>
+
+            `;
+
+        }
+
+    }
+
+}
+
+// =========================================================
+// UPDATE APPOINTMENT STATUS
+// =========================================================
+
+async function updateAppointmentStatus(
+    appointmentId,
+    status
+) {
+
+    const actionText =
+        status === "Confirmed"
+            ? "confirm"
+            : "cancel";
+
+
+    const confirmed =
+        confirm(
+            `Are you sure you want to ${actionText} this appointment?`
+        );
+
+
+    if (!confirmed) {
+        return;
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                `/api/doctor/appointments/${appointmentId}/status`,
+                {
+
+                    method: "PATCH",
+
+                    credentials: "include",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify({
+                            status
+                        })
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            !response.ok ||
+            !data.success
+        ) {
+
+            throw new Error(
+                data.message ||
+                "Failed to update appointment"
+            );
+        }
+
+
+        // Reload dashboard
+        await loadDoctorDashboard();
+
+
+        alert(
+            data.message ||
+            "Appointment updated successfully."
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Appointment status error:",
+            error
+        );
+
+
+        alert(
+            error.message ||
+            "Failed to update appointment."
+        );
+    }
+}
+
+
+// =========================================================
+// CONSULTATION MODAL
+// =========================================================
+
+function openConsultationModal(
+    appointmentId,
+    patientId,
+    patientName
+) {
+
+    closeConsultationModal();
+
+
+    const modal =
+        document.createElement(
+            "div"
+        );
+
+
+    modal.id =
+        "consultationModal";
+
+
+    modal.className =
+        "consultation-modal-overlay";
+
+
+    modal.innerHTML = `
+
+        <div class="consultation-modal">
+
+
+            <!-- HEADER -->
+
+            <div class="consultation-modal-header">
+
+                <div>
+
+                    <span class="consultation-label">
+                        MEDICAL CONSULTATION
+                    </span>
+
+                    <h2>
+                        Complete Consultation
+                    </h2>
+
+                    <p>
+                        Patient:
+                        <strong>
+                            ${escapeHTML(
+                                patientName
+                            )}
+                        </strong>
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="consultation-close"
+                    onclick="closeConsultationModal()"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <form
+                id="consultationForm"
+                onsubmit="
+                    submitConsultation(
+                        event,
+                        ${appointmentId},
+                        ${patientId}
+                    )
+                "
+            >
+
+
+                <!-- DIAGNOSIS -->
+
+                <div class="consultation-field">
+
+                    <label>
+
+                        Diagnosis
+                        <span>*</span>
+
+                    </label>
+
+                    <textarea
+                        id="consultationDiagnosis"
+                        required
+                        rows="4"
+                        placeholder="Enter the patient's diagnosis..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- PRESCRIPTION -->
+
+                <div class="consultation-field">
+
+                    <label>
+
+                        Prescription
+
+                    </label>
+
+                    <textarea
+                        id="consultationPrescription"
+                        rows="4"
+                        placeholder="Enter medicines, dosage and instructions..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- NOTES -->
+
+                <div class="consultation-field">
+
+                    <label>
+
+                        Doctor Notes
+
+                    </label>
+
+                    <textarea
+                        id="consultationNotes"
+                        rows="4"
+                        placeholder="Additional observations, recommendations or follow-up instructions..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- FOOTER -->
+
+                <div class="consultation-modal-footer">
+
+                    <button
+                        type="button"
+                        class="consultation-cancel-btn"
+                        onclick="closeConsultationModal()"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="consultation-save-btn"
+                    >
+
+                        <i class="fa-solid fa-file-medical"></i>
+
+                        Complete Consultation
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    `;
+
+
+    document.body.appendChild(
+        modal
+    );
+
+
+    requestAnimationFrame(() => {
+
+        modal.classList.add(
+            "visible"
+        );
+
+    });
+}
+
+
+// =========================================================
+// CLOSE CONSULTATION MODAL
+// =========================================================
+
+function closeConsultationModal() {
+
+    const modal =
+        document.getElementById(
+            "consultationModal"
+        );
+
+
+    if (!modal) {
+        return;
+    }
+
+
+    modal.classList.remove(
+        "visible"
+    );
+
+
+    setTimeout(() => {
+
+        modal.remove();
+
+    }, 200);
+}
+
+
+// =========================================================
+// SUBMIT CONSULTATION
+// =========================================================
+
+async function submitConsultation(
+    event,
+    appointmentId,
+    patientId
+) {
+
+    event.preventDefault();
+
+
+    const diagnosis =
+        document
+            .getElementById(
+                "consultationDiagnosis"
+            )
+            ?.value
+            .trim();
+
+
+    const prescription =
+        document
+            .getElementById(
+                "consultationPrescription"
+            )
+            ?.value
+            .trim();
+
+
+    const notes =
+        document
+            .getElementById(
+                "consultationNotes"
+            )
+            ?.value
+            .trim();
+
+
+    if (!diagnosis) {
+
+        alert(
+            "Diagnosis is required."
+        );
+
+        return;
+    }
+
+
+    const submitButton =
+        document.querySelector(
+            ".consultation-save-btn"
+        );
+
+
+    if (submitButton) {
+
+        submitButton.disabled =
+            true;
+
+        submitButton.innerHTML = `
+
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+            Saving...
+
+        `;
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                `/api/doctor/appointments/${appointmentId}/complete`,
+                {
+
+                    method: "POST",
+
+                    credentials: "include",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            patient_id:
+                                patientId,
+
+                            diagnosis,
+
+                            prescription,
+
+                            notes
+
+                        })
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            !response.ok ||
+            !data.success
+        ) {
+
+            throw new Error(
+                data.message ||
+                "Failed to complete consultation"
+            );
+        }
+
+
+        closeConsultationModal();
+
+
+        alert(
+            "Consultation completed successfully."
+        );
+
+
+        // Refresh everything
+        await loadDoctorDashboard();
+
+
+    } catch (error) {
+
+        console.error(
+            "Consultation error:",
+            error
+        );
+
+
+        alert(
+            error.message ||
+            "Failed to complete consultation."
+        );
+
+
+        if (submitButton) {
+
+            submitButton.disabled =
+                false;
+
+            submitButton.innerHTML = `
+
+                <i class="fa-solid fa-file-medical"></i>
+
+                Complete Consultation
+
+            `;
+        }
+    }
+}
+
+
+// =========================================================
+// ESCAPE JAVASCRIPT STRING
+// =========================================================
+
+function escapeJS(
+    value
+) {
+
+    return String(
+        value ?? ""
+    )
+        .replaceAll(
+            "\\",
+            "\\\\"
+        )
+        .replaceAll(
+            "'",
+            "\\'"
+        )
+        .replaceAll(
+            "\n",
+            "\\n"
+        )
+        .replaceAll(
+            "\r",
+            "\\r"
+        );
+}
+
+// =========================================================
+// PATIENT HTML
+// =========================================================
+
+function createPatientHTML(
+    patient
+) {
+
+    return `
+
+        <div class="doctor-patient-card">
+
+            <strong>
+                ${escapeHTML(
+                    patient.name ||
+                    "Patient"
+                )}
+            </strong>
+
+            <span>
+                ${escapeHTML(
+                    patient.email ||
+                    "No email"
+                )}
+            </span>
+
+            <span>
+                ${escapeHTML(
+                    patient.gender ||
+                    "Gender not provided"
+                )}
+
+                ${
+                    patient.blood_group
+                        ? ` • ${escapeHTML(
+                            patient.blood_group
+                        )}`
+                        : ""
+                }
+
+            </span>
+
+        </div>
+
+    `;
+
+}
+
+
+// =========================================================
+// HELPERS
+// =========================================================
+
+function setText(
+    id,
+    value
+) {
+
+    const element =
+        document.getElementById(id);
+
+
+    if (element) {
+
+        element.textContent =
+            value ?? "";
+
+    }
+
+}
+
+
+function getInitials(
+    name
+) {
+
+    if (!name) {
+        return "DR";
+    }
+
+
+    return String(name)
+        .trim()
+        .split(/\s+/)
+        .filter(Boolean)
+        .slice(0, 2)
+        .map(
+            word =>
+                word
+                    .charAt(0)
+                    .toUpperCase()
+        )
+        .join("") || "DR";
+
+}
+
+
+function formatDate(
+    date
+) {
+
+    if (!date) {
+        return "Date unavailable";
+    }
+
+
+    const parsed =
+        new Date(date);
+
+
+    if (
+        Number.isNaN(
+            parsed.getTime()
+        )
+    ) {
+
+        return String(date);
+
+    }
+
+
+    return parsed.toLocaleDateString(
+        "en-IN",
+        {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        }
+    );
+
+}
+
+
+function escapeHTML(
+    value
+) {
+
+    return String(
+        value ?? ""
+    )
+        .replaceAll(
+            "&",
+            "&amp;"
+        )
+        .replaceAll(
+            "<",
+            "&lt;"
+        )
+        .replaceAll(
+            ">",
+            "&gt;"
+        )
+        .replaceAll(
+            '"',
+            "&quot;"
+        )
+        .replaceAll(
+            "'",
+            "&#039;"
+        );
+
+}
+
+
+function showError(
+    message
+) {
+
+    const error =
+        document.getElementById(
+            "doctorError"
+        );
+
+
+    if (!error) {
+        return;
+    }
+
+
+    error.textContent =
+        message ||
+        "Something went wrong.";
+
+
+    error.style.display =
+        "block";
+
+}
+
+
+// =========================================================
+// LOGOUT
+// =========================================================
+
+const logoutButton =
+    document.getElementById(
+        "logoutBtn"
+    );
+
+
+if (logoutButton) {
+
+    logoutButton.addEventListener(
+        "click",
+        async function () {
+
+            const confirmed =
+                confirm(
+                    "Are you sure you want to logout?"
+                );
+
+
+            if (!confirmed) {
+                return;
+            }
+
+
+            try {
+
+                if (
+                    window.PulseCareAuth &&
+                    typeof
+                    window.PulseCareAuth.logout
+                    === "function"
+                ) {
+
+                    await
+                        window.PulseCareAuth.logout();
+
+                } else {
+
+                    window.location.replace(
+                        "login.html"
+                    );
+
+                }
+
+            } catch (error) {
+
+                console.error(
+                    "Logout error:",
+                    error
+                );
+
+                window.location.replace(
+                    "login.html"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+// =========================================================
+// MOBILE SIDEBAR
+// =========================================================
+
+const mobileMenuButton =
+    document.getElementById(
+        "mobileMenuBtn"
+    );
+
+
+const sidebar =
+    document.getElementById(
+        "sidebar"
+    );
+
+
+const sidebarOverlay =
+    document.getElementById(
+        "sidebarOverlay"
+    );
+
+
+if (
+    mobileMenuButton &&
+    sidebar
+) {
+
+    mobileMenuButton.addEventListener(
+        "click",
+        function () {
+
+            sidebar.classList.toggle(
+                "open"
+            );
+
+
+            if (sidebarOverlay) {
+
+                sidebarOverlay.classList.toggle(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+if (sidebarOverlay) {
+
+    sidebarOverlay.addEventListener(
+        "click",
+        function () {
+
+            sidebar.classList.remove(
+                "open"
+            );
+
+            sidebarOverlay.classList.remove(
+                "active"
+            );
+
+        }
+    );
+
+}
+
+
+// =========================================================
+// CLOSE MOBILE MENU AFTER NAVIGATION
+// =========================================================
+
+document.querySelectorAll(
+    ".sidebar-link"
+).forEach(
+    link => {
+
+        link.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    window.innerWidth <= 768
+                ) {
+
+                    sidebar?.classList.remove(
+                        "open"
+                    );
+
+                    sidebarOverlay?.classList.remove(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+// =========================================================
+// SMOOTH SCROLL
+// =========================================================
+
+document.querySelectorAll(
+    'a[href^="#"]'
+).forEach(
+    link => {
+
+        link.addEventListener(
+            "click",
+            function (event) {
+
+                const targetId =
+                    this.getAttribute(
+                        "href"
+                    );
+
+
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+
+                    return;
+
+                }
+
+
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
+
+
+                if (target) {
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }
+
+            }
+        );
+
+    }
+);
+
+</script>
+<style>
+
+/* =========================================================
+   DOCTOR NOTIFICATION SYSTEM
+   ========================================================= */
+
+.notification-wrapper {
+    position: relative;
+}
+
+
+/* ---------------------------------------------------------
+   NOTIFICATION BADGE
+   --------------------------------------------------------- */
+
+.notification-badge {
+    position: absolute;
+
+    top: -4px;
+    right: -4px;
+
+    min-width: 18px;
+    height: 18px;
+
+    padding: 0 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ef4444;
+
+    color: white;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    border: 2px solid white;
+
+    line-height: 1;
+}
+
+
+/* ---------------------------------------------------------
+   NOTIFICATION PANEL
+   --------------------------------------------------------- */
+
+.doctor-notification-panel {
+
+    position: absolute;
+
+    top: calc(100% + 12px);
+
+    right: 0;
+
+    width: 380px;
+
+    max-width: calc(100vw - 30px);
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.18);
+
+    z-index: 9999;
+
+    overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   HEADER
+   --------------------------------------------------------- */
+
+.doctor-notification-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 16px 18px;
+
+    border-bottom: 1px solid #eef2f7;
+
+    background: #ffffff;
+}
+
+
+.doctor-notification-header strong {
+
+    display: block;
+
+    font-size: 16px;
+
+    color: #0f172a;
+}
+
+
+.doctor-notification-header span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 12px;
+
+    color: #64748b;
+}
+
+
+.notification-close-btn {
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    border-radius: 8px;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: 0.2s ease;
+}
+
+
+.notification-close-btn:hover {
+
+    background: #e2e8f0;
+
+    color: #0f172a;
+}
+
+
+/* ---------------------------------------------------------
+   NOTIFICATION LIST
+   --------------------------------------------------------- */
+
+.doctor-notification-list {
+
+    max-height: 420px;
+
+    overflow-y: auto;
+}
+
+
+/* ---------------------------------------------------------
+   SINGLE NOTIFICATION
+   --------------------------------------------------------- */
+
+.doctor-notification-item {
+
+    display: flex;
+
+    gap: 12px;
+
+    padding: 16px 18px;
+
+    border-bottom: 1px solid #f1f5f9;
+
+    cursor: default;
+
+    transition: background 0.2s ease;
+}
+
+
+.doctor-notification-item:hover {
+
+    background: #f8fafc;
+}
+
+
+.doctor-notification-item:last-child {
+
+    border-bottom: none;
+}
+
+
+/* ---------------------------------------------------------
+   ICON
+   --------------------------------------------------------- */
+
+.doctor-notification-icon {
+
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+
+    border-radius: 10px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 16px;
+}
+
+
+/* ---------------------------------------------------------
+   CONTENT
+   --------------------------------------------------------- */
+
+.doctor-notification-content {
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.doctor-notification-title {
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #0f172a;
+
+    margin-bottom: 4px;
+}
+
+
+.doctor-notification-message {
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: #64748b;
+
+    word-break: break-word;
+}
+
+
+.doctor-notification-time {
+
+    margin-top: 6px;
+
+    font-size: 11px;
+
+    color: #94a3b8;
+}
+
+
+/* ---------------------------------------------------------
+   EMPTY STATE
+   --------------------------------------------------------- */
+
+.notification-empty {
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+    color: #64748b;
+}
+
+
+.notification-empty i {
+
+    font-size: 32px;
+
+    color: #94a3b8;
+
+    margin-bottom: 12px;
+
+    display: block;
+}
+
+
+.notification-empty strong {
+
+    display: block;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+
+.notification-empty span {
+
+    font-size: 12px;
+}
+
+
+/* ---------------------------------------------------------
+   LOADING
+   --------------------------------------------------------- */
+
+.notification-loading {
+
+    min-height: 150px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* ---------------------------------------------------------
+   ERROR
+   --------------------------------------------------------- */
+
+.notification-error {
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    color: #dc2626;
+
+    font-size: 13px;
+}
+
+
+.notification-error i {
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+
+    display: block;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .doctor-notification-panel {
+
+        position: fixed;
+
+        top: 75px;
+
+        right: 15px;
+
+        left: 15px;
+
+        width: auto;
+
+        max-width: none;
+
+    }
+
+}
+
+</style>
+<script>
+
+/* =========================================================
+   DOCTOR NOTIFICATION SYSTEM
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const notificationBtn =
+        document.getElementById("notificationBtn");
+
+    const notificationPanel =
+        document.getElementById("doctorNotificationPanel");
+
+    const notificationList =
+        document.getElementById("doctorNotificationList");
+
+    const notificationBadge =
+        document.getElementById("notificationBadge");
+
+    const closeNotificationBtn =
+        document.getElementById("closeNotificationBtn");
+
+
+    /* -----------------------------------------------------
+       SAFETY CHECK
+       ----------------------------------------------------- */
+
+    if (
+        !notificationBtn ||
+        !notificationPanel ||
+        !notificationList
+    ) {
+
+        console.error(
+            "Doctor notification elements not found."
+        );
+
+        return;
+
+    }
+
+
+    /* =====================================================
+       FORMAT DATE
+       ===================================================== */
+
+    function formatNotificationTime(dateValue) {
+
+        if (!dateValue) {
+            return "";
+        }
+
+        const date =
+            new Date(dateValue);
+
+        if (Number.isNaN(date.getTime())) {
+            return "";
+        }
+
+        return date.toLocaleString(
+            "en-IN",
+            {
+                day: "2-digit",
+                month: "short",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit"
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       UPDATE BADGE
+       ===================================================== */
+
+    function updateNotificationBadge(count) {
+
+        if (!notificationBadge) {
+            return;
+        }
+
+
+        const unreadCount =
+            Number(count) || 0;
+
+
+        if (unreadCount > 0) {
+
+            notificationBadge.textContent =
+                unreadCount > 99
+                    ? "99+"
+                    : unreadCount;
+
+            notificationBadge.style.display =
+                "flex";
+
+        } else {
+
+            notificationBadge.style.display =
+                "none";
+
+        }
+
+    }
+
+
+    /* =====================================================
+       LOAD NOTIFICATIONS
+       ===================================================== */
+
+    async function loadDoctorNotifications() {
+
+        try {
+
+            notificationList.innerHTML = `
+
+                <div class="notification-loading">
+
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+
+                    <span>
+                        Loading notifications...
+                    </span>
+
+                </div>
+
+            `;
+
+
+            const response =
+                await fetch(
+                    "/api/notifications",
+                    {
+                        method: "GET",
+                        credentials: "include",
+                        headers: {
+                            "Accept":
+                                "application/json"
+                        }
+                    }
+                );
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    `HTTP ${response.status}`
+                );
+
+            }
+
+
+            const data =
+                await response.json();
+
+
+            console.log(
+                "Doctor notifications:",
+                data
+            );
+
+
+            /* ------------------------------------------------
+               UPDATE BADGE
+               ------------------------------------------------ */
+
+            updateNotificationBadge(
+                data.unreadCount || 0
+            );
+
+
+            /* ------------------------------------------------
+               CHECK RESPONSE
+               ------------------------------------------------ */
+
+            if (
+                !data.success ||
+                !Array.isArray(data.notifications)
+            ) {
+
+                throw new Error(
+                    "Invalid notifications response"
+                );
+
+            }
+
+
+            const notifications =
+                data.notifications;
+
+
+            /* ------------------------------------------------
+               EMPTY
+               ------------------------------------------------ */
+
+            if (
+                notifications.length === 0
+            ) {
+
+                notificationList.innerHTML = `
+
+                    <div class="notification-empty">
+
+                        <i class="fa-regular fa-bell-slash"></i>
+
+                        <strong>
+                            No notifications
+                        </strong>
+
+                        <span>
+                            You're all caught up.
+                        </span>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            /* ------------------------------------------------
+               RENDER NOTIFICATIONS
+               ------------------------------------------------ */
+
+            notificationList.innerHTML =
+                notifications
+                    .map(function (notification) {
+
+                        const title =
+                            notification.title ||
+                            "Notification";
+
+
+                        const message =
+                            notification.message ||
+                            "";
+
+
+                        const time =
+                            formatNotificationTime(
+                                notification.created_at
+                            );
+
+
+                        return `
+
+                            <div
+                                class="doctor-notification-item"
+                                data-notification-id="${notification.id}"
+                            >
+
+                                <div
+                                    class="doctor-notification-icon"
+                                >
+
+                                    <i
+                                        class="fa-regular fa-bell"
+                                    ></i>
+
+                                </div>
+
+
+                                <div
+                                    class="doctor-notification-content"
+                                >
+
+                                    <div
+                                        class="doctor-notification-title"
+                                    >
+                                        ${escapeNotificationHTML(title)}
+                                    </div>
+
+
+                                    <div
+                                        class="doctor-notification-message"
+                                    >
+                                        ${escapeNotificationHTML(message)}
+                                    </div>
+
+
+                                    ${
+                                        time
+                                            ? `
+                                                <div
+                                                    class="doctor-notification-time"
+                                                >
+                                                    ${escapeNotificationHTML(time)}
+                                                </div>
+                                            `
+                                            : ""
+                                    }
+
+                                </div>
+
+                            </div>
+
+                        `;
+
+                    })
+                    .join("");
+
+
+        } catch (error) {
+
+            console.error(
+                "Failed to load doctor notifications:",
+                error
+            );
+
+
+            notificationList.innerHTML = `
+
+                <div class="notification-error">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    <div>
+                        Failed to load notifications.
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+    }
+
+
+    /* =====================================================
+       ESCAPE HTML
+       Prevent notification text from injecting HTML
+       ===================================================== */
+
+    function escapeNotificationHTML(value) {
+
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+
+    }
+
+
+    /* =====================================================
+       OPEN / CLOSE PANEL
+       ===================================================== */
+
+    function openNotificationPanel() {
+
+        notificationPanel.style.display =
+            "block";
+
+
+        loadDoctorNotifications();
+
+    }
+
+
+    function closeNotificationPanel() {
+
+        notificationPanel.style.display =
+            "none";
+
+    }
+
+
+    /* =====================================================
+       BELL CLICK
+       ===================================================== */
+
+    notificationBtn.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+
+            const isOpen =
+                notificationPanel.style.display ===
+                "block";
+
+
+            if (isOpen) {
+
+                closeNotificationPanel();
+
+            } else {
+
+                openNotificationPanel();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       CLOSE BUTTON
+       ===================================================== */
+
+    if (closeNotificationBtn) {
+
+        closeNotificationBtn.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                event.stopPropagation();
+
+                closeNotificationPanel();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       CLICK OUTSIDE
+       ===================================================== */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                !notificationPanel.contains(event.target) &&
+                !notificationBtn.contains(event.target)
+            ) {
+
+                closeNotificationPanel();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       INITIAL LOAD
+       Get unread notification count.
+       ===================================================== */
+
+    loadDoctorNotifications();
+
+
+    /* =====================================================
+       AUTO REFRESH
+       Check every 30 seconds for new notifications.
+       ===================================================== */
+
+    setInterval(
+        function () {
+
+            loadDoctorNotifications();
+
+        },
+        30000
+    );
+
+});
+
+</script>
+</body>
+
+</html>
