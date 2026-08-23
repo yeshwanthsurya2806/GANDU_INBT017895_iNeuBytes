@@ -149,7 +149,7 @@ GitHub:
 https://github.com/yeshwanthsurya2806
 
 LinkedIn:
-(Add your LinkedIn profile link)
+https://www.linkedin.com/in/yeshwanthsurya/
 
 ---
 
