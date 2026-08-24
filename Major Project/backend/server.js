@@ -17,6 +17,11 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
+// Trust Render's reverse proxy in production
+if (process.env.NODE_ENV === "production") {
+    app.set("trust proxy", 1);
+}
+
 
 // =========================================================
 // MIDDLEWARE
