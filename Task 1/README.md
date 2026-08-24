@@ -157,7 +157,7 @@ https://www.linkedin.com/in/yeshwanthsurya/
 
 GitHub Pages:
 
-(Add your GitHub Pages URL after deployment)
+https://yeshwanthsurya2806.github.io/iNeuBytes-Task1/
 
 ---
 
