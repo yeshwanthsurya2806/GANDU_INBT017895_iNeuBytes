@@ -41,14 +41,17 @@ app.use(express.urlencoded({
 
 app.use(
     session({
-        secret: "pulsecare-development-secret",
+        secret:
+    process.env.SESSION_SECRET ||
+    "pulsecare-development-secret",
         resave: false,
         saveUninitialized: false,
 
         cookie: {
             maxAge: 1000 * 60 * 60 * 4,
             httpOnly: true,
-            secure: false
+            secure:
+    process.env.NODE_ENV === "production"
         }
     })
 );
