@@ -1,8 +1,0 @@
-Major Project/node_modules/
-Major Project/.env
-Major Project/.env.*
-!"Major Project/.env.example"
-
-Major Project/database/*.db
-Major Project/database/*.db-shm
-Major Project/database/*.db-wal

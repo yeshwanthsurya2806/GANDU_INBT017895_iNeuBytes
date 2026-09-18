@@ -91,37 +91,7 @@ The website is fully responsive and optimized for:
 
 ---
 
-## 📸 Project Screenshots
-
-### Home Page
-
-> *(Add screenshot here)*
-
----
-
-### Services Section
-
-> *(Add screenshot here)*
-
----
-
-### Doctors Section
-
-> *(Add screenshot here)*
-
----
-
-### Appointment Form
-
-> *(Add screenshot here)*
-
----
-
-### Mobile View
-
-> *(Add screenshot here)*
-
----
+### Doctors Secti
 
 ## 🚀 How to Run the Project
 
@@ -179,7 +149,7 @@ GitHub:
 https://github.com/yeshwanthsurya2806
 
 LinkedIn:
-(Add your LinkedIn profile link)
+https://www.linkedin.com/in/yeshwanthsurya/
 
 ---
 
@@ -187,7 +157,7 @@ LinkedIn:
 
 GitHub Pages:
 
-(Add your GitHub Pages URL after deployment)
+https://yeshwanthsurya2806.github.io/iNeuBytes-Task1/
 
 ---
 
