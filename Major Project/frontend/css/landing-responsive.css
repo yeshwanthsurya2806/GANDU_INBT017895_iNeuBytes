@@ -1,0 +1,401 @@
+/* ==========================================================
+                    TABLET DEVICES
+                (992px and below)
+========================================================== */
+
+@media (max-width: 992px) {
+
+    /* ---------- Layout ---------- */
+
+    .hero,
+    .about {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+    .booking-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .doctor-summary-card {
+
+        position: static;
+
+    }
+
+    .two-columns {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    /* ---------- Typography ---------- */
+
+    .hero-content h1 {
+
+        font-size: 48px;
+
+    }
+
+    /* ---------- Grid Layouts ---------- */
+
+    .services-container,
+    .doctor-container,
+    .testimonial-container,
+    .why-container,
+    .contact-container,
+    .stats,
+    .footer-container {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    /* ---------- Doctor Details ---------- */
+
+    .doctor-card {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+    .doctor-meta {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .doctor-left img {
+
+        width: 220px;
+
+    }
+
+}
+
+/* ==========================================================
+                    MOBILE DEVICES
+                (768px and below)
+========================================================== */
+
+@media (max-width: 768px) {
+
+    /* ---------- General ---------- */
+
+    section {
+
+        padding: 70px 5%;
+
+    }
+
+    /* ---------- Hero ---------- */
+
+    .hero {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+    .hero-content h1 {
+
+        font-size: 38px;
+
+    }
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+    }
+
+    /* ---------- About ---------- */
+
+    .about {
+
+        flex-direction: column;
+
+    }
+
+    /* ---------- Grids ---------- */
+
+    .services-container,
+    .doctor-container,
+    .testimonial-container,
+    .why-container,
+    .contact-container,
+    .stats,
+    .history-grid,
+    .summary-info {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    /* ---------- Forms ---------- */
+
+    .appointment-form {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .appointment-form .btn,
+    .input-group:last-child {
+
+        grid-column: auto;
+
+    }
+
+    /* ---------- Summary ---------- */
+
+    #summaryCard {
+
+        padding: 30px;
+
+    }
+
+}
+
+/* ==========================================================
+                MOBILE NAVIGATION
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+
+        display: block;
+
+    }
+
+    .nav-btn {
+
+        display: none;
+
+    }
+
+    .nav-links {
+
+        position: absolute;
+
+        top: 90px;
+        left: -100%;
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 25px;
+
+        padding: 40px 0;
+
+        background: var(--white);
+
+        box-shadow: 0 10px 20px rgba(0,0,0,.1);
+
+        transition: left .4s ease;
+
+    }
+
+    .nav-links.active {
+
+        left: 0;
+
+    }
+
+}
+/* ==========================================================
+                BOOKING PAGE
+            (992px and below)
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .booking-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .doctor-summary-card {
+
+        position: static;
+
+        max-width: 600px;
+
+        width: 100%;
+
+        margin: 0 auto 30px;
+
+    }
+
+}
+
+/* ==========================================================
+                SMALL MOBILE DEVICES
+            (600px and below)
+========================================================== */
+
+@media (max-width: 600px) {
+
+    /* ---------- Sections ---------- */
+
+    .booking-section {
+
+        padding: 45px 15px;
+
+    }
+
+    section {
+
+        padding: 60px 20px;
+
+    }
+
+    /* ---------- Typography ---------- */
+
+    .section-title h2 {
+
+        font-size: 30px;
+
+    }
+
+    .hero-content h1 {
+
+        font-size: 32px;
+
+    }
+
+    .page-header h1 {
+
+        font-size: 32px;
+
+    }
+
+    .page-header p {
+
+        font-size: 15px;
+
+    }
+
+    /* ---------- Booking ---------- */
+
+    .booking-form-card {
+
+        padding: 25px 18px;
+
+    }
+
+    .booking-doctor-image {
+
+        height: 250px;
+
+    }
+
+    .two-columns {
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+
+    }
+
+    /* ---------- Buttons ---------- */
+
+    .btn,
+    .btn-outline {
+
+        width: 100%;
+
+    }
+
+    .hero-buttons,
+    .doctor-buttons {
+
+        flex-direction: column;
+
+    }
+
+    /* ---------- Cards ---------- */
+
+    .doctor-details-card {
+
+        padding: 25px;
+
+    }
+
+    .doctor-left img {
+
+        width: 180px;
+
+        height: 180px;
+
+    }
+
+    /* ---------- Summary ---------- */
+
+    #summaryCard {
+
+        padding: 20px;
+
+    }
+
+    /* ---------- Scroll Button ---------- */
+
+    .scroll-top {
+
+        width: 45px;
+
+        height: 45px;
+
+        right: 20px;
+
+        bottom: 20px;
+
+    }
+
+}
+
+/* ==========================================================
+            LARGE SCREENS
+        (1400px and above)
+========================================================== */
+
+@media (min-width: 1400px) {
+
+    .container {
+
+        max-width: 1320px;
+
+    }
+
+}
+
+/* ==========================================================
+            ACCESSIBILITY
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+
+        animation: none !important;
+
+        transition: none !important;
+
+        scroll-behavior: auto !important;
+
+    }
+
+}
